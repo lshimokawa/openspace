@@ -1,0 +1,23 @@
+<h1>Listing open_spaces</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @open_spaces.each do |open_space| %>
+  <tr>
+    <td><%= open_space.name %></td>
+    <td><%= link_to 'Show', open_space %></td>
+    <td><%= link_to 'Edit', edit_open_space_path(open_space) %></td>
+    <td><%= link_to 'Destroy', open_space, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Open space', new_open_space_path %>

@@ -1,0 +1,2 @@
+module OpenSpacesHelper
+end
