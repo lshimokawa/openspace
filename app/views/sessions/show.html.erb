@@ -2,16 +2,15 @@
   <b>Título:</b>
   <%= @session.title %>
 </p>
-
-<p>
-  <b>Propuesto por:</b>
-  <%= @session.user.screen_name %>
-</p>
-
 <p>
   <b>Descripción:</b>
   <%= @session.description %>
 </p>
+<p>
+  <b>Creado por:</b>
+  <%= @session.user.nickname %>
+</p>
+
 <%= link_to 'Regresar', sessions_path, 'data-role'=>'button', 'data-inline'=>'true' %>
 <%= link_to "Votar", {:controller => "vote", :action => "create", :id => @session.id}, 
       {'data-role'=> 'button', 'data-inline'=>'true', 'data-theme'=>'b'} if current_user and not current_user.voted?(@session) %>

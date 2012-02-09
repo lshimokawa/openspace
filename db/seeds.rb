@@ -6,6 +6,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+admin = User.create(provider: 'twitter', uid: '8223712', name: "Lennon Shimokawa", nickname: "lshimokawa")
+
 OpenSpace.create(
   name: 'Agile Open Lima V', 
   description: 'Open Space sobre metodologías ágiles organizado por Agile Perú',
@@ -13,4 +16,5 @@ OpenSpace.create(
   where: 'Universidad San Martín de Porres',
   hashtag: '#agileopenlima'
 )
-Session.create(title: 'Gamestorming', description: 'Juegos para innovadores y agentes de cambio')
+
+Session.create(title: 'Gamestorming', description: 'Juegos para innovadores y agentes de cambio', user: admin)
