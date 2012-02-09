@@ -1,6 +1,5 @@
 Openspace::Application.routes.draw do
   resources :open_spaces
-
   resources :sessions
   match "/auth/:provider/callback" => "authentication#create"
   match "/signout" => "authentication#destroy", :as => :signout
