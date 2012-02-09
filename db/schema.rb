@@ -15,13 +15,18 @@ ActiveRecord::Schema.define(:version => 20120209024609) do
 
   create_table "open_spaces", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "description"
+    t.date     "when"
+    t.string   "where"
+    t.integer  "status"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "sessions", :force => true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description"
+    t.integer  "status"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
     t.integer  "user_id"
