@@ -1,7 +1,7 @@
 class CreateSessions < ActiveRecord::Migration
   def change
     create_table :sessions do |t|
-      t.string :name
+      t.string :title
       t.string :description
 
       t.timestamps

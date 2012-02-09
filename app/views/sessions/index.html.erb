@@ -1,25 +1,8 @@
-<h1>Listing sessions</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @sessions.each do |session| %>
-  <tr>
-    <td><%= session.name %></td>
-    <td><%= session.description %></td>
-    <td><%= link_to 'Show', session %></td>
-    <td><%= link_to 'Edit', edit_session_path(session) %></td>
-    <td><%= link_to 'Destroy', session, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<% content_for :header do %>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Session', new_session_path %>
+<ul data-role="listview">
+<% @sessions.each do |session| %>
+	<li><%= link_to session.title, session_path(session) %></li>
+<% end %>
+</ul>
