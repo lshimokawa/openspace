@@ -52,6 +52,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    make_voteable (0.1.1)
+      activerecord (~> 3.0)
     mime-types (1.17.2)
     multi_json (1.0.4)
     oauth (0.4.5)
@@ -119,6 +121,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
+  make_voteable
   omniauth-twitter
   pg
   rails (= 3.2.1)

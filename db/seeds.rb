@@ -5,4 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+OpenSpace.create(name: 'Agile Open Lima V')
 Session.create(title: 'Gamestorming', description: 'Juegos para innovadores y agentes de cambio')

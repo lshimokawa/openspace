@@ -4,6 +4,7 @@ gem 'rails', '3.2.1'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'omniauth-twitter'
+gem 'make_voteable'
 
 group :development do
   gem 'sqlite3'
