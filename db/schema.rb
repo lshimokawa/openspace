@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120209024609) do
     t.date     "when"
     t.string   "where"
     t.integer  "status"
+    t.string   "hashtag"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20120209024609) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "nickname"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
     t.integer  "up_votes",   :default => 0, :null => false

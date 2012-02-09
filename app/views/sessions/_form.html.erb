@@ -11,10 +11,9 @@
     </div>
   <% end %>
 
-  <%= f.label :title, 'Título' %>
-  <%= f.text_field :title %>
-  <%= f.label :description, 'Descripción' %>
-  <%= f.text_field :description %>
+  <%= f.label :title, 'Título' %><%= f.text_field :title %>
+  <%= f.label :description, 'Descripción' %><%= f.text_field :description %>
+  
   <%= link_to 'Cancelar', :back, 'data-role'=>'button', 'data-inline'=>'true' %>
   <%= f.submit 'Proponer sesión', 'data-inline'=>'true', 'data-theme'=>'b' %>
-  <% end %>
+<% end %>
