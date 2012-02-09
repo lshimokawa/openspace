@@ -1,7 +1,7 @@
 Openspace::Application.routes.draw do
   resources :open_spaces
   resources :sessions
-  get "navigation/index"
+  get "navigation/index", "navigation/about"
   match "/auth/:provider/callback" => "authentication#create"
   match "/signout" => "authentication#destroy", :as => :signout
   root :to => 'navigation#index'
