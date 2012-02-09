@@ -1,6 +1,8 @@
 Openspace::Application.routes.draw do
   resources :sessions
-  root :to => 'sessions#index'
+  match "/auth/:provider/callback" => "authentication#create"
+  match "/signout" => "authentication#destroy", :as => :signout
+  root :to => 'authentication#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

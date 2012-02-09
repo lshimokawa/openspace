@@ -1,0 +1,10 @@
+<% if !current_user %>
+  <%= link_to "Sign in with Twitter", "/auth/twitter", 'data-role'=> 'button', :rel => 'external' %>
+<% end %>
+
+<%= link_to "Sesiones propuestas", sessions_path, 'data-role'=> 'button' %>
+
+<% if current_user %>
+  <%= link_to "Sign Out", signout_path, 'data-role'=> 'button' %>
+<% end %>
+
