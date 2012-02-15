@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :sessions
-  make_voter
+  make_voter # Los usuarios pueden votar por sesiones
   
   def self.create_with_omniauth(auth)
     create! do |user|

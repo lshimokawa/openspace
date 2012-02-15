@@ -9,7 +9,7 @@
 
 admin = User.create(provider: 'twitter', uid: '8223712', name: "Lennon Shimokawa", nickname: "lshimokawa")
 
-OpenSpace.create(
+Event.create(
   name: 'Agile Open Lima V', 
   description: 'Open Space sobre metodologías ágiles organizado por Agile Perú',
   when: '25/02/2012',

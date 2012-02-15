@@ -6,7 +6,8 @@ Openspace::Application.routes.draw do
   resources :open_spaces, :sessions
   
   match "/sessions/:id/vote" => "vote#create"
-  get "navigation/index", "navigation/about"
+  match "/about" => "events#show"
+  get "navigation/index"
   root :to => 'navigation#index'
 
   # The priority is based upon order of creation:

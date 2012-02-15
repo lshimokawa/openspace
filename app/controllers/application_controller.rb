@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :current_user, :current_open_space
+  helper_method :current_user, :current_event
 
   private
   
-  def current_open_space
-    #TODO actualmente solo soporte un Open Space
-    @current_open_space ||= OpenSpace.last
+  def current_event
+    #TODO actualmente solo soporte un evento
+    @current_event ||= Event.last
   end
 
   def current_user

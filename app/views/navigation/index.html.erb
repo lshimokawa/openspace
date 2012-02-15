@@ -2,5 +2,5 @@
 <%= link_to "Revisar la agenda", nil, 'data-role'=> 'button' %>
 <%= link_to "Proponer una sesión", new_session_path, 'data-role'=> 'button' if current_user %>
 <%= link_to "Revisar las sesiones propuestas", sessions_path, 'data-role'=> 'button' %>
-<%= link_to "Acerca de", navigation_about_path, 'data-role'=> 'button' %>
+<%= link_to "Acerca de", about_path, 'data-role'=> 'button' %>
 <%= link_to "Sign Out", signout_path, 'data-role'=> 'button' if current_user %>
