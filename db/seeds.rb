@@ -11,7 +11,7 @@ admin = User.create(provider: 'twitter', uid: '8223712', name: "Lennon Shimokawa
 
 Event.create(
   name: 'Agile Open Lima V', 
-  description: 'Open Space sobre metodologías ágiles organizado por Agile Perú',
+  description: 'Open Space sobre metodologías ágiles organizado por la comunidad Agile Perú.',
   when: '25/02/2012',
   where: 'Universidad San Martín de Porres',
   hashtag: '#agileopenlima'

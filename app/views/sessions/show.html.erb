@@ -12,6 +12,8 @@
 </p>
 
 <%= link_to 'Regresar', sessions_path, 'data-role'=>'button', 'data-inline'=>'true' %>
+<%= link_to "Signin en Twitter para votar", "/auth/twitter", 'data-role'=> 'button', 'data-inline'=>'true', 
+  'data-theme'=>'b', :rel => 'external' unless current_user %>
 <%= link_to "Votar", {:controller => "vote", :action => "create", :id => @session.id}, 
-      {'data-role'=> 'button', 'data-inline'=>'true', 'data-theme'=>'b'} if current_user and not current_user.voted?(@session) %>
+  {'data-role'=> 'button', 'data-inline'=>'true', 'data-theme'=>'b'} if current_user and not current_user.voted?(@session) %>
 
