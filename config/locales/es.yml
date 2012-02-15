@@ -4,10 +4,8 @@
 es:
   activerecord:     
     errors:
-      full_messages:
-        format: "%{message}"
       messages:
-        blank: 'Por favor ingresa el campo "%{attribute}"'
+        blank: 'no puede estar vacío'
     attributes:
       session:
         title: "Título"
