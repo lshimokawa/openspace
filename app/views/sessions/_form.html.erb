@@ -9,10 +9,10 @@
     </div>
   <% end %>
 
-  <%= f.label :title %><%= f.text_field :title, :placeholder => 'Ingresa el título de la sesión' %>
-  <%= f.label :proposed_by %><%= f.text_field :proposed_by %>
+  <%= f.label :title %><%= f.text_field :title, :placeholder => 'Título de la sesión' %>
+  <%= f.label :proposed_by %><%= f.text_field :proposed_by, :placeholder => 'Nombre de la persona que propone la sesión' %>
   <%= f.label :session_type %><%= f.select(:session_type, Session::SESSION_TYPES) %>
-  <%= f.label :description %><%= f.text_area :description %>
+  <%= f.label :description %><%= f.text_area :description, :placeholder => 'Descripción de la sesión' %>
     
   <%= link_to 'Cancelar', :back, 'data-role'=>'button', 'data-inline'=>'true' %>
   <%= f.submit 'Proponer sesión', 'data-inline'=>'true', 'data-theme'=>'b' %>
