@@ -1,8 +1,6 @@
 <%= form_for(@session) do |f| %>
   <% if @session.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@session.errors.count, "error") %> prohibited this session from being saved:</h2>
-
       <ul>
       <% @session.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,10 +9,14 @@
     </div>
   <% end %>
 
-  <%= f.label :title, 'Título' %><%= f.text_field :title, :placeholder => 'Ingresa el título de la sesión' %>
-  <%= f.label :proposed_by, 'Propuesto por' %><%= f.text_field :proposed_by %>
-  <%= f.label :session_type, 'Tipo' %><%= f.select(:session_type, Session::SESSION_TYPES) %>
-  <%= f.label :description, 'Descripción' %><%= f.text_area :description %>
+  <%= f.label :title %><%= f.text_field :title, :placeholder => 'Ingresa el título de la sesión' %>
+  <%= f.label :proposed_by %><%= f.text_field :proposed_by %>
+  
+  <fieldset data-role="controlgroup" data-type="horizontal">
+    <%= f.label :session_type %><%= f.select(:session_type, Session::SESSION_TYPES) %>
+  </fieldset>  
+
+  <%= f.label :description %><%= f.text_area :description %>
     
   <%= link_to 'Cancelar', :back, 'data-role'=>'button', 'data-inline'=>'true' %>
   <%= f.submit 'Proponer sesión', 'data-inline'=>'true', 'data-theme'=>'b' %>

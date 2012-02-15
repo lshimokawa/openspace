@@ -1,0 +1,18 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  activerecord:     
+    errors:
+      full_messages:
+        format: "%{message}"
+      messages:
+        blank: 'Por favor ingresa el campo "%{attribute}"'
+    attributes:
+      session:
+        title: "Título"
+        proposed_by: "Propuesto por"
+        session_type: "Tipo"
+        description: "Descripción"
+        status: "Estado"
+          
