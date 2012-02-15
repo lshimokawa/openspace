@@ -9,7 +9,7 @@
 
 admin = User.create(provider: 'twitter', uid: '8223712', name: "Lennon Shimokawa", nickname: "lshimokawa")
 
-Event.create(
+event = Event.create(
   name: 'Agile Open Lima V', 
   description: 'Open Space sobre metodologías ágiles organizado por la comunidad Agile Perú.',
   when: '25/02/2012',
@@ -17,4 +17,4 @@ Event.create(
   hashtag: '#agileopenlima'
 )
 
-Session.create(title: 'Gamestorming', description: 'Juegos para innovadores y agentes de cambio', user: admin)
+Session.create(title: 'Gamestorming', description: 'Juegos para innovadores y agentes de cambio', event: event, user: admin)
