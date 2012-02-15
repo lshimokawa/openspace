@@ -11,11 +11,7 @@
 
   <%= f.label :title %><%= f.text_field :title, :placeholder => 'Ingresa el título de la sesión' %>
   <%= f.label :proposed_by %><%= f.text_field :proposed_by %>
-  
-  <fieldset data-role="controlgroup" data-type="horizontal">
-    <%= f.label :session_type %><%= f.select(:session_type, Session::SESSION_TYPES) %>
-  </fieldset>  
-
+  <%= f.label :session_type %><%= f.select(:session_type, Session::SESSION_TYPES) %>
   <%= f.label :description %><%= f.text_area :description %>
     
   <%= link_to 'Cancelar', :back, 'data-role'=>'button', 'data-inline'=>'true' %>

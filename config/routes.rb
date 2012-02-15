@@ -5,7 +5,7 @@ Openspace::Application.routes.draw do
 
   resources :open_spaces, :sessions
   
-  match "/sessions/:id/vote" => "vote#create"
+  match "/sessions/:id/vote" => "voting#create"
   match "/about" => "events#show"
   get "navigation/index"
   root :to => 'navigation#index'

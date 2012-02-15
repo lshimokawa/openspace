@@ -1,4 +1,4 @@
-class VoteController < ApplicationController
+class VotingController < ApplicationController
   
   def create
     #TODO Limitar el número de votos
