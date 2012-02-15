@@ -11,3 +11,6 @@
  *= require_self
  *= require_tree .
 */
+a {
+  text-decoration:none
+}

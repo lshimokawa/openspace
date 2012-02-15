@@ -3,11 +3,15 @@
   <%= @session.title %>
 </p>
 <p>
+  <b>Propuesto por:</b>
+  <%= @session.proposed_by %>
+</p>
+<p>
   <b>Descripción:</b>
   <%= @session.description %>
 </p>
 <p>
-  <b>Creado por:</b>
+  <b>Registrado por:</b>
   <%= twitter_link(@session.user.nickname) %>
 </p>
 

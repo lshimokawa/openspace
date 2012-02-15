@@ -11,9 +11,11 @@
     </div>
   <% end %>
 
-  <%= f.label :title, 'Título' %><%= f.text_field :title %>
-  <%= f.label :description, 'Descripción' %><%= f.text_field :description %>
-  
+  <%= f.label :title, 'Título' %><%= f.text_field :title, :placeholder => 'Ingresa el título de la sesión' %>
+  <%= f.label :proposed_by, 'Propuesto por' %><%= f.text_field :proposed_by %>
+  <%= f.label :session_type, 'Tipo' %><%= f.select(:session_type, Session::SESSION_TYPES) %>
+  <%= f.label :description, 'Descripción' %><%= f.text_area :description %>
+    
   <%= link_to 'Cancelar', :back, 'data-role'=>'button', 'data-inline'=>'true' %>
   <%= f.submit 'Proponer sesión', 'data-inline'=>'true', 'data-theme'=>'b' %>
 <% end %>
