@@ -9,12 +9,25 @@
 
 admin = User.create(provider: 'twitter', uid: '8223712', name: "Lennon Shimokawa", nickname: "lshimokawa")
 
-event = Event.create(
+aol5 = Event.create(
   name: 'Agile Open Lima V', 
   description: 'Open Space sobre metodologías ágiles organizado por la comunidad Agile Perú.',
-  when: '25/02/2012',
+  starting_at: '25/02/2012 09:00',
+  ending_at: '25/02/2012 18:00',
   where: 'Universidad San Martín de Porres',
   hashtag: '#agileopenlima'
 )
 
-Session.create(title: 'Gamestorming', description: 'Juegos para innovadores y agentes de cambio', event: event, user: admin)
+aol5.locations.create(name: 'Auditorio')
+aol5.locations.create(name: 'Aula 1')
+aol5.locations.create(name: 'Aula 2')
+aol5.locations.create(name: 'Aula 3')
+aol5.locations.create(name: 'Aula 4')
+
+Session.create(
+  title: 'Gamestorming', 
+  proposed_by: 'Lennon Shimokawa', 
+  description: 'Juegos para innovadores y agentes de cambio', 
+  event: aol5, 
+  user: admin
+)

@@ -11,17 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120215012327) do
+ActiveRecord::Schema.define(:version => 20120216004733) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.date     "when"
+    t.date     "starting_at"
+    t.date     "ending_at"
     t.string   "where"
     t.integer  "status"
     t.string   "hashtag"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "event_id"
   end
 
   create_table "sessions", :force => true do |t|
@@ -30,11 +38,14 @@ ActiveRecord::Schema.define(:version => 20120215012327) do
     t.string   "session_type"
     t.text     "description"
     t.integer  "status"
+    t.date     "starting_at"
+    t.date     "ending_at"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
     t.integer  "user_id"
     t.integer  "up_votes",     :default => 0, :null => false
     t.integer  "event_id"
+    t.integer  "location_id"
   end
 
   create_table "users", :force => true do |t|

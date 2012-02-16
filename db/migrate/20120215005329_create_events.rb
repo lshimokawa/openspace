@@ -3,7 +3,8 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.string :name
       t.text :description
-      t.date :when
+      t.date :starting_at
+      t.date :ending_at
       t.string :where
       t.integer :status
       t.string :hashtag
