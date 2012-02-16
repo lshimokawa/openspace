@@ -8,6 +8,8 @@ gem 'cancan'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'ruby_gntp'
+  gem 'guard-rspec'
 end
 
 group :test do

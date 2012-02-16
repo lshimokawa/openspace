@@ -47,6 +47,12 @@ GEM
     factory_girl_rails (1.6.0)
       factory_girl (~> 2.5.0)
       railties (>= 3.0.0)
+    ffi (1.0.11)
+    guard (1.0.0)
+      ffi (>= 0.5.0)
+      thor (~> 0.14.6)
+    guard-rspec (0.6.0)
+      guard (>= 0.10.0)
     hashie (1.2.0)
     hike (1.2.1)
     i18n (0.6.0)
@@ -112,6 +118,7 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.8.0)
+    ruby_gntp (0.3.4)
     sass (3.1.14)
     sass-rails (3.2.4)
       railties (~> 3.2.0)
@@ -139,12 +146,14 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 3.2.1)
   factory_girl_rails
+  guard-rspec
   jquery-rails
   make_voteable
   omniauth-twitter
   pg
   rails (= 3.2.1)
   rspec-rails
+  ruby_gntp
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
