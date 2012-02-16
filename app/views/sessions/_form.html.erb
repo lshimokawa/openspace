@@ -1,15 +1,13 @@
 <%= form_for(@session) do |f| %>
   <% if @session.errors.any? %>
-    <div id="error_explanation">
-      <ul>
+    <ul data-role="listview">
       <% @session.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
   <% end %>
 
-  <%= f.label :title %><%= f.text_field :title, :placeholder => 'Título de la sesión' %>
+  <%= f.label :title %><%= f.text_field :title, :class => 'required', :placeholder => 'Título de la sesión' %>
   <%= f.label :proposed_by %><%= f.text_field :proposed_by, :placeholder => 'Nombre de la persona que propone la sesión' %>
   <%= f.label :session_type %><%= f.select(:session_type, Session::SESSION_TYPES) %>
   <%= f.label :description %><%= f.text_area :description, :placeholder => 'Descripción de la sesión' %>

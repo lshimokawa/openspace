@@ -20,5 +20,5 @@ a {
 }
 
 #error_explanation {
-  border: 2px solid red;
+  color: red;
 }
