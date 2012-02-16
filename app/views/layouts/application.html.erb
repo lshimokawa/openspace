@@ -20,6 +20,8 @@
     </div>
 
     <div data-role="content">
+      <div id="notice"><%= flash[:notice] %></div>
+      <div id="error"><%= flash[:error] %></div>
       <%= yield %>
     </div> 
    

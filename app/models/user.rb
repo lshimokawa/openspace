@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  ROLES = %w[admin facilitator assistant guest]
+  ROLES = %w[admin facilitator assistant]
   has_many :sessions
   make_voter # los usuarios pueden votar por sesiones
   

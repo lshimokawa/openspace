@@ -19,6 +19,10 @@ a {
   color: green; 
 }
 
+#error {
+  color: red; 
+}
+
 #error_explanation {
   color: red;
 }

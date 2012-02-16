@@ -13,6 +13,7 @@
 
 
 <%= link_to 'Regresar', sessions_path, 'data-role'=>'button', 'data-inline'=>'true' %>
+<%= link_to 'Eliminar', session_path(@session), method: :delete, 'data-role'=>'button', 'data-inline'=>'true', confirm: 'Are you sure?' if can? :delete, @session %>
 <%= link_to "Signin en Twitter para votar", "/auth/twitter", 'data-role'=> 'button', 'data-inline'=>'true', 
   'data-theme'=>'b', :rel => 'external' unless current_user %>
 <%= link_to "Votar", {:controller => "voting", :action => "create", :id => @session.id}, 

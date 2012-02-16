@@ -18,8 +18,9 @@ class SessionsController < ApplicationController
 
   def create
     @session = Session.new(params[:session])
+    @session.user = current_user
     if @session.save
-      redirect_to @session, notice: 'Session was successfully created.'
+      redirect_to @session
     else
       render action: "new"
     end
@@ -28,7 +29,7 @@ class SessionsController < ApplicationController
   def update
     @session = Session.find(params[:id])
     if @session.update_attributes(params[:session])
-      redirect_to @session, notice: 'Session was successfully updated.'
+      redirect_to @session
     else
       render action: "edit"
     end
