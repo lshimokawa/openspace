@@ -1,18 +1,19 @@
-<%= content_for :header do %><h1><%= @session.title %></h1><% end %>
-<p>
-  Sesión propuesta por <%= @session.proposed_by %>, tiene <%= pluralize(@session.up_votes, 'voto') %><br />
-  Registrado por <%= twitter_link(@session.user.nickname) %>
-</p>
-<p>
-  <b>Descripción:</b>
-  <%= @session.description %>
-</p>
+<%= content_for :header do %>
+  <%= link_to 'Regresar', sessions_path, 'data-role'=>'button' %>
+  <h1><%= @session.title %></h1>
+<% end %>
+
+<div data-role="controlgroup" data-type="horizontal" >  
+  <%= link_to 'Editar', edit_session_path(@session), 'data-role'=>'button' if can? :edit, @session %>
+  <%= link_to 'Eliminar', session_path(@session), 'data-role'=>'button', method: :delete, confirm: 'Are you sure?' if can? :delete, @session %>
+  <%= link_to "Votar", {:controller => "voting", :action => "create", :id => @session.id}, 'data-role'=>'button' if current_user %>
+</div>
+
+<p>Sesión propuesta por <%= @session.proposed_by %>, tiene <%= pluralize(@session.up_votes, 'voto') %></p>
+<p>Tipo de sesión: <%= @session.session_type.capitalize %></p>
+<p>Descripción: <%= @session.description %></p>
+<p>Registrado por <%= twitter_link(@session.user.nickname) %></p>
 
 
-<%= link_to 'Regresar', sessions_path, 'data-role'=>'button', 'data-inline'=>'true' %>
-<%= link_to 'Eliminar', session_path(@session), method: :delete, 'data-role'=>'button', 'data-inline'=>'true', confirm: 'Are you sure?' if can? :delete, @session %>
-<%= link_to "Signin en Twitter para votar", "/auth/twitter", 'data-role'=> 'button', 'data-inline'=>'true', 
-  'data-theme'=>'b', :rel => 'external' unless current_user %>
-<%= link_to "Votar", {:controller => "voting", :action => "create", :id => @session.id}, 
-  {'data-role'=> 'button', 'data-inline'=>'true', 'data-theme'=>'b'} if current_user %>
+
 

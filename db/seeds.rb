@@ -27,7 +27,8 @@ aol5.locations.create(name: 'Aula 4')
 Session.create(
   title: 'Gamestorming', 
   proposed_by: 'Lennon Shimokawa', 
-  description: 'Juegos para innovadores y agentes de cambio', 
+  session_type: 'workshop',
+  description: 'Juegos para innovadores y agentes de cambio. Los juegos pueden ayudar a las organizaciones a resolver problemas complejos a través de la participación colaborativa, eliminan barreras, mejoran la comunicación y generan nuevas ideas, conceptos y estrategias. Iniciaremos revisando los fundamentos del Gamestorming, etapas y diseño de juegos. En la parte central del taller los asistentes participarán en juegos facilitados por el expositor para aplicar técnicas de Gamestorming. Finalmente se realizará un conversatorio para compartir experiencias y conclusiones. Contenido basado en el libro Gamestorming de Dave Gray.', 
   event: aol5, 
   user: admin
 )

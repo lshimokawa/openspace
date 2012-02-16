@@ -5,7 +5,7 @@ class CreateSessions < ActiveRecord::Migration
       t.string :proposed_by
       t.string :session_type
       t.text :description
-      t.integer :status
+      t.string :status, default: 'created'
       t.datetime :starting_at
       t.datetime :ending_at
 

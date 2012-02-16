@@ -1,18 +1,16 @@
 require 'spec_helper'
-require 'cancan/matchers'
 
-describe Ability do 
-  describe "Authorizations" do 
-    context "User is an Admin" do 
-      before(:each) do 
-        @user = Factory.build(:user, :role => 'admin')
-        @ability = Ability.new(@user)
-      end
-      describe "should allow management of users" do
-        it "should allow management of users" do
-          @ability.should be_able_to(:manage, User.new)
-        end
-      end
-    end
+describe User do
+  subject { user }
+  
+  context "when has a valid role" do 
+    let(:user) { Factory.build(:user, role: 'admin') } 
+    it { should be_valid } 
   end
+  
+  context "when has an invalid role" do 
+    let(:user) { Factory.build(:user, role: 'XXX') } 
+    it { should have(1).error_on(:role) } 
+  end
+  
 end

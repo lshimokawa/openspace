@@ -37,13 +37,13 @@ ActiveRecord::Schema.define(:version => 20120216021834) do
     t.string   "proposed_by"
     t.string   "session_type"
     t.text     "description"
-    t.integer  "status"
+    t.string   "status",       :default => "created"
     t.datetime "starting_at"
     t.datetime "ending_at"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.integer  "user_id"
-    t.integer  "up_votes",     :default => 0, :null => false
+    t.integer  "up_votes",     :default => 0,         :null => false
     t.integer  "event_id"
     t.integer  "location_id"
   end

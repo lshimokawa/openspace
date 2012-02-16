@@ -14,10 +14,11 @@
 <body>  
   <div data-role="page">
     <div data-role="header">
-      <%= link_to '', root_path, 'data-icon' => 'home', 'data-iconpos' => 'notext' unless current_page?(root_url) %>
       <%= yield :header %>
     </div>
-
+    <div data-role="navbar" data-theme="d">
+      <ul><%= yield :navbar %></ul>
+    </div>
     <div data-role="content">
       <div id="notice"><%= flash[:notice] %></div>
       <div id="error"><%= flash[:error] %></div>

@@ -1,8 +1,8 @@
 require 'spec_helper'
 require 'cancan/matchers'
 
-describe "User" do
-  describe "abilities" do 
+describe User do
+  describe "authorizations" do 
     subject { ability }
     let(:ability) { Ability.new(user) }
     
@@ -21,7 +21,6 @@ describe "User" do
       it { should_not be_able_to(:manage, User.new) } 
       
       context "and creates a session" do 
-        let(:user) { Factory.create(:user, :role => 'assistant') } 
         let(:session) { Factory.create(:session, :user => user) } 
         it { should be_able_to(:update, session) } 
         it { should be_able_to(:destroy, session) }

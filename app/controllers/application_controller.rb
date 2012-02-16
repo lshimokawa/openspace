@@ -5,8 +5,7 @@ class ApplicationController < ActionController::Base
   private
   
   def current_event
-    #TODO solo soporta el último evento
-    @current_event ||= Event.last
+    @current_user ||= Event.find(session[:event_id]) if session[:event_id]
   end
 
   def current_user

@@ -1,10 +1,13 @@
 class Session < ActiveRecord::Base
+  SESSION_TYPES = ["charla", "conversatorio", "workshop"].freeze
+  SESSION_STATUS = ["created", "accepted"].freeze
+
   belongs_to :user
   belongs_to :event
   has_one :location
   make_voteable
   validates_presence_of :title, :proposed_by
-  
-  SESSION_TYPES = ["Charla", "Conversatorio", "Workshop"]
+  #validates_inclusion_of :session_type, :in => SESSION_TYPES
+  validates_inclusion_of :status, :in => SESSION_STATUS, :message => 'El estado no es valido'
   
 end

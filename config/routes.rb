@@ -3,11 +3,13 @@ Openspace::Application.routes.draw do
   match "/auth/:provider/callback" => "authentication#create"
   match "/signout" => "authentication#destroy", :as => :signout
 
-  resources :open_spaces, :sessions
+  resources :open_spaces, :sessions, :events, :users
   
   match "/sessions/:id/vote" => "voting#create"
+  match "/agenda" => "agenda#show"
   match "/about" => "events#show"
   get "navigation/index"
+  
   root :to => 'navigation#index'
 
   # The priority is based upon order of creation:

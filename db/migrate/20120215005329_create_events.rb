@@ -6,7 +6,7 @@ class CreateEvents < ActiveRecord::Migration
       t.date :starting_at
       t.date :ending_at
       t.string :where
-      t.integer :status
+      t.string :status, default: 'created'
       t.string :hashtag
       t.timestamps
     end
