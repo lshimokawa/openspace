@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   private
   
   def current_event
-    #TODO actualmente solo soporte un evento
+    #TODO solo soporta el último evento
     @current_event ||= Event.last
   end
 

@@ -1,11 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  provider: MyString
-  uid: MyString
-  name: MyString
+admin:
+  name: admin
+  role: admin
 
-two:
-  provider: MyString
-  uid: MyString
-  name: MyString
+guest:
+  name: guest
+  role: guest
+

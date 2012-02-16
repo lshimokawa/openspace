@@ -6,8 +6,8 @@ class CreateSessions < ActiveRecord::Migration
       t.string :session_type
       t.text :description
       t.integer :status
-      t.date :starting_at
-      t.date :ending_at
+      t.datetime :starting_at
+      t.datetime :ending_at
 
       t.timestamps
     end

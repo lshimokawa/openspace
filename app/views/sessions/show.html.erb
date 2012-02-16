@@ -3,17 +3,14 @@
   <%= @session.title %>
 </p>
 <p>
-  <b>Propuesto por:</b>
-  <%= @session.proposed_by %>
+  Sesión propuesta por <%= @session.proposed_by %>, tiene <%= pluralize(@session.up_votes, 'voto') %><br />
+  Registrado por <%= twitter_link(@session.user.nickname) %>
 </p>
 <p>
   <b>Descripción:</b>
   <%= @session.description %>
 </p>
-<p>
-  <b>Registrado por:</b>
-  <%= twitter_link(@session.user.nickname) %>
-</p>
+
 
 <%= link_to 'Regresar', sessions_path, 'data-role'=>'button', 'data-inline'=>'true' %>
 <%= link_to "Signin en Twitter para votar", "/auth/twitter", 'data-role'=> 'button', 'data-inline'=>'true', 
