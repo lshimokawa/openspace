@@ -2,10 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
 gem 'jquery-rails'
-gem 'simple_form'
 gem 'omniauth-twitter'
 gem 'make_voteable'
-gem "cancan"
+gem 'cancan'
+
+group :test do
+  gem 'rspec'
+end
 
 group :development do
   gem 'sqlite3'
