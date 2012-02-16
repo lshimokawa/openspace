@@ -1,7 +1,4 @@
-<p>
-  <b>Título:</b>
-  <%= @session.title %>
-</p>
+<%= content_for :header do %><h1><%= @session.title %></h1><% end %>
 <p>
   Sesión propuesta por <%= @session.proposed_by %>, tiene <%= pluralize(@session.up_votes, 'voto') %><br />
   Registrado por <%= twitter_link(@session.user.nickname) %>

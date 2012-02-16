@@ -6,12 +6,13 @@ describe "User" do
     subject { ability }
     let(:ability) { Ability.new(user) }
     
-    context "when has role admin" do 
+    context "when role is admin" do 
       let(:user) { Factory.create(:user, :role => 'admin') } 
       it { should be_able_to(:manage, Session.new) } 
       it { should be_able_to(:manage, User.new) } 
     end
-    context "when has role assistant" do 
+    
+    context "when role is assistant" do 
       let(:user) { Factory.create(:user, :role => 'assistant') } 
       let(:session) { Factory.create(:session) } 
       it { should be_able_to(:create, Session.new) } 
