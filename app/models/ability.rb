@@ -7,7 +7,7 @@ class Ability
       can :manage, :all
     elsif user.role == 'assistant'
       can :create, Session
-      #can [:update, :destroy], Session, :user_id => user.id
+      can [:update, :destroy], Session, :user_id => user.id
     else
       can :read, :all
     end
