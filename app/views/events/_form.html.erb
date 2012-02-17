@@ -1,17 +1,31 @@
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
       <ul>
-      <% @event.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
+  <%= f.label :name %><%= f.text_field :name, :placeholder => 'Nombre el evento' %>
+  <%= f.label :description %><%= f.text_area :description, :placeholder => 'Descripción del evento' %>
+  <fieldset data-role="controlgroup" data-type="horizontal">
+    <legend>Fecha</legend>
+    <%= f.date_select :starting_at %>
+  </fieldset>
+  <fieldset data-role="controlgroup" data-type="horizontal">
+    <legend>Hora inicio</legend>
+    <%= f.time_select :starting_at %>
+  </fieldset>
+  <fieldset data-role="controlgroup" data-type="horizontal">
+    <legend>Hora fin</legend>
+    <%= f.time_select :ending_at %>
+  </fieldset>
+  
+  <fieldset class="ui-grid-a">
+  		<div class="ui-block-a"><%= link_to 'Cancelar', events_path, 'data-role'=>'button', 'data-icon'=>'delete' %></div>
+  		<div class="ui-block-b"><%= f.submit 'Guardar', 'data-icon'=>'check', 'data-theme'=>'b' %></div>
+  </fieldset>
 <% end %>

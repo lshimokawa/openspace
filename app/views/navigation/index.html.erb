@@ -7,14 +7,11 @@
   <% end %>
 <% end %>
 
-<% if current_event %>
-  
+<% if current_event %>  
   <%= link_to "Eventos", events_path, 'data-role'=> 'button' if can? :manage, Event %>
   <%= link_to "Agenda", agenda_path, 'data-role'=> 'button' %>
   <%= link_to "Sesiones", sessions_path, 'data-role'=> 'button' %>
   <%= link_to "Proponer una sesión", new_session_path, 'data-role'=> 'button' if can? :create, Session %>
-  <%= link_to "Acerca de", about_path, 'data-role'=> 'button' %>
-  
-<% else %>
+  <% else %>
   No hay eventos activos
 <% end %>

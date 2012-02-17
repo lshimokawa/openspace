@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   private
   
   def current_event
-    @current_user ||= Event.find(session[:event_id]) if session[:event_id]
+    @current_event ||= Event.find(session[:event_id]) if session[:event_id]
   end
 
   def current_user

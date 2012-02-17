@@ -1,5 +1,7 @@
 <%= content_for :header do %>
+  <%= link_to "Inicio", root_path, 'data-icon'=> 'home' %>
   <h1>Sesiones propuestas</h1>
+  <%= link_to "Proponer", new_session_path, 'data-icon'=> 'plus' if can? :create, Session %>
 <% end %>
 
 <% if @sessions.empty? %>

@@ -1,11 +1,14 @@
 <%= content_for :header do %>
-  <a data-rel="back" data-icon="back">Regresar</a>
+  <%= link_to "Inicio", root_path, 'data-icon'=> 'home' %>
   <h1><%= @event.name %></h1>
 <% end %>
-<div data-role="controlgroup" data-type="horizontal" >  
-  <%= link_to 'Editar', edit_event_path(@event), 'data-role'=>'button' if can? :edit, @event %>
-  <%= link_to 'Eliminar', event_path(@event), 'data-role'=>'button', method: :delete, confirm: 'Are you sure?' if can? :delete, @event %>
-</div>
+
+<% if can? :manage, @event %>
+  <div data-role="controlgroup" data-type="horizontal" >  
+    <%= link_to 'Editar', edit_event_path(@event), 'data-role'=>'button' %>
+    <%= link_to 'Eliminar', event_path(@event), 'data-role'=>'button', method: :delete, confirm: 'Are you sure?' %>
+  </div>
+<% end %>
 
 <p>Cuando: <%= @event.starting_at.strftime('%d/%m/%Y de %H:%M') + ' a '+ @event.ending_at.strftime('%H:%M')%></p>
 <p>Donde: <%= @event.where %></p>

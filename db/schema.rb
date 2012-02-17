@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(:version => 20120216021834) do
   create_table "events", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.date     "starting_at"
-    t.date     "ending_at"
+    t.datetime "starting_at"
+    t.datetime "ending_at"
     t.string   "where"
     t.string   "status",      :default => "created"
     t.string   "hashtag"

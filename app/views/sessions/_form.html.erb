@@ -8,10 +8,6 @@
       </ul>
     </div>
   <% end %>
-  
-  <%= content_for :header do %>
-    
-  <% end %>
 
   <%= f.label :title %><%= f.text_field :title, :class => 'required', :placeholder => 'Título de la sesión' %>
   <%= f.label :proposed_by %><%= f.text_field :proposed_by, :placeholder => 'Nombre de la persona que propone la sesión' %>
@@ -19,7 +15,7 @@
   <%= f.label :description %><%= f.text_area :description, :placeholder => 'Descripción de la sesión' %>
   
   <fieldset class="ui-grid-a">
-  		<div class="ui-block-a"><%= link_to 'Cancelar', root_path, 'data-role'=>'button', 'data-icon'=>'delete' %></div>
+  		<div class="ui-block-a"><%= link_to 'Cancelar', sessions_path, 'data-role'=>'button', 'data-icon'=>'delete' %></div>
   		<div class="ui-block-b"><%= f.submit 'Proponer', 'data-icon'=>'check', 'data-theme'=>'b' %></div>
   </fieldset>
   
