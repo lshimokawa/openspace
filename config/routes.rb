@@ -3,7 +3,7 @@ Openspace::Application.routes.draw do
   match "/auth/:provider/callback" => "authentication#create"
   match "/signout" => "authentication#destroy", :as => :signout
 
-  resources :open_spaces, :sessions, :events, :users
+  resources :events, :sessions, :users
   
   match "/sessions/:id/vote" => "voting#create"
   match "/agenda" => "agenda#show"

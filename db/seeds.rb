@@ -11,9 +11,9 @@ admin = User.create(provider: 'twitter', uid: '8223712', name: "Lennon Shimokawa
 
 aol5 = Event.create(
   name: 'Agile Open Lima V', 
-  description: 'Open Space sobre metodologías ágiles organizado por la comunidad Agile Perú.',
-  starting_at: '2012-02-25 09:00:00',
-  ending_at: '2012-02-25 18:00:00',
+  description: 'La comunidad Agile Perú organiza el Agile Open Lima V, evento de difusión de metodologías ágiles en formato Open Space. Puedes ver las fotos de las ediciones anteriores aquí para que te des una idea. En este evento encontrarás charlas, conversatorios y workshops sobre temas de metodologías ágiles: Scrum, Extreme Programming, Lean, Kanban, Software Craftmanship, frameworks y herrmientas de desarrollo de software. Además se organizarán Coding Dojos para los interesados en mejorar su técnica de programación.',
+  starting_at: DateTime.new(2012, 02, 25, 9, 0),
+  ending_at: DateTime.new(2012, 02, 25, 18, 0),
   where: 'Universidad San Martín de Porres',
   hashtag: '#agileopenlima'
 )

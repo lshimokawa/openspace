@@ -1,5 +1,5 @@
 <%= content_for :header do %><h1><%= @event.name %></h1><% end %>
 
-<p>Cuando: <%= @event.starting_at %></p>
+<p>Cuando: <%= @event.starting_at.strftime('%d/%m/%Y de %H:%M') + ' a '+ @event.ending_at.strftime('%H:%M')%></p>
 <p>Donde: <%= @event.where %></p>
 <p><%= @event.description %></p>

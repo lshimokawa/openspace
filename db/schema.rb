@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(:version => 20120216021834) do
     t.date     "starting_at"
     t.date     "ending_at"
     t.string   "where"
-    t.integer  "status"
+    t.string   "status",      :default => "created"
     t.string   "hashtag"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   create_table "locations", :force => true do |t|
