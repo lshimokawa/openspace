@@ -1,4 +1,7 @@
-<%= content_for :header do %><h1><%= @event.name %></h1><% end %>
+<%= content_for :header do %>
+  <a data-rel="back" data-icon="back">Regresar</a>
+  <h1><%= @event.name %></h1>
+<% end %>
 <div data-role="controlgroup" data-type="horizontal" >  
   <%= link_to 'Editar', edit_event_path(@event), 'data-role'=>'button' if can? :edit, @event %>
   <%= link_to 'Eliminar', event_path(@event), 'data-role'=>'button', method: :delete, confirm: 'Are you sure?' if can? :delete, @event %>
