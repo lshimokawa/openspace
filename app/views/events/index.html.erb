@@ -1,21 +1,9 @@
-<h1>Listing events</h1>
-
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @events.each do |event| %>
-  <tr>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<%= content_for :header do %>
+  <h1>Eventos</h1>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Event', new_event_path %>
+<ul data-role="listview" data-filter="true">
+<% @events.each do |event| %>
+	<li><%= link_to event.name, event_path(event) %></li>
+<% end %>
+</ul>

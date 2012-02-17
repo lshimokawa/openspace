@@ -5,6 +5,7 @@ gem 'jquery-rails'
 gem 'omniauth-twitter'
 gem 'make_voteable'
 gem 'cancan'
+gem 'inherited_resources'
 
 group :development, :test do
   gem 'rspec-rails'

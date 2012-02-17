@@ -1,5 +1,4 @@
 <%= content_for :header do %>
-  <%= link_to 'Regresar', sessions_path, 'data-role'=>'button', 'data-icon' => 'back' %>
   <h1><%= @session.title %></h1>
 <% end %>
 
@@ -13,7 +12,3 @@
 <p>Tipo de sesión: <%= @session.session_type.capitalize %></p>
 <p>Descripción: <%= @session.description %></p>
 <p>Registrado por <%= twitter_link(@session.user.nickname) %></p>
-
-
-
-

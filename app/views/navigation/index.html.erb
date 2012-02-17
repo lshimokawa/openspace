@@ -1,12 +1,20 @@
-<%= content_for :header do %><h1>Open Space</h1><% end %>
+<%= content_for :header do %>
+  <h1>Open Space</h1>
+  <% if current_user %>
+    <%= link_to "Sign Out", signout_path, 'data-role'=> 'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right' %>
+  <% else %>
+    <%= link_to "Sign in with Twitter", "/auth/twitter", 'data-role'=>'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right', :rel => 'external' %>
+  <% end %>
+<% end %>
 
 <% if current_event %>
-  <%= link_to "Sign in with Twitter", "/auth/twitter", 'data-role'=> 'button', :rel => 'external' unless current_user %>
+  
+  <%= link_to "Eventos", events_path, 'data-role'=> 'button' %>
   <%= link_to "Agenda", agenda_path, 'data-role'=> 'button' %>
   <%= link_to "Sesiones", sessions_path, 'data-role'=> 'button' %>
-  <%= link_to "Proponer una sesión", new_session_path, 'data-role'=> 'button' if current_user %>
+  <%= link_to "Proponer una sesión", new_session_path, 'data-role'=> 'button' %>
   <%= link_to "Acerca de", about_path, 'data-role'=> 'button' %>
-  <%= link_to "Sign Out", signout_path, 'data-role'=> 'button' if current_user %>
+  
 <% else %>
   No hay eventos activos
 <% end %>
