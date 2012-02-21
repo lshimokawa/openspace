@@ -7,11 +7,14 @@
   <% end %>
 <% end %>
 
-<% if current_event %>  
-  <%= link_to "Eventos", events_path, 'data-role'=> 'button' if can? :manage, Event %>
-  <%= link_to "Agenda", agenda_path, 'data-role'=> 'button' %>
-  <%= link_to "Sesiones", sessions_path, 'data-role'=> 'button' %>
-  <%= link_to "Proponer una sesión", new_session_path, 'data-role'=> 'button' if can? :create, Session %>
-  <% else %>
-  No hay eventos activos
+<% if @events.empty? %>
+  No hay eventos activos.
+<% else %>
+  <ul data-role="listview">
+  <% @events.each do |event| %>
+  	<li>
+  	  <%= link_to event.name, event_menu_path(event) %>
+  	</li>
+  <% end %>
+  </ul>
 <% end %>

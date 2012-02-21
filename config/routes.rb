@@ -1,10 +1,18 @@
 Openspace::Application.routes.draw do
+  get "admin/index"
+
   #omniauth
   match "/auth/:provider/callback" => "authentication#create"
   match "/signout" => "authentication#destroy", :as => :signout
 
-  resources :events, :sessions, :users
+  resources :events do
+    resources :sessions
+    resources :agenda
+  end
+
+  resources :users
   
+  match "/events/:id/menu" => "events#menu", :as => "event_menu"
   match "/sessions/:id/vote" => "voting#create"
   match "/agenda" => "agenda#show"
   match "/about" => "events#show"

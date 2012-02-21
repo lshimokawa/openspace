@@ -10,9 +10,8 @@
   <% end %>
   
   <%= f.label :name %><%= f.text_field :name, :placeholder => 'Nombre el evento' %>
-  <%= f.label :description %><%= f.text_area :description, :placeholder => 'Descripción del evento' %>
   <fieldset data-role="controlgroup" data-type="horizontal">
-    <legend>Fecha</legend>
+    <legend>Cuando</legend>
     <%= f.date_select :starting_at %>
   </fieldset>
   <fieldset data-role="controlgroup" data-type="horizontal">
@@ -23,6 +22,8 @@
     <legend>Hora fin</legend>
     <%= f.time_select :ending_at %>
   </fieldset>
+  <%= f.label :where %><%= f.text_field :where, :placeholder => 'Lugar del evento' %>
+  <%= f.label :description %><%= f.text_area :description, :placeholder => 'Descripción del evento' %>
   
   <fieldset class="ui-grid-a">
   		<div class="ui-block-a"><%= link_to 'Cancelar', events_path, 'data-role'=>'button', 'data-icon'=>'delete' %></div>

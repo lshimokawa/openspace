@@ -1,9 +1,13 @@
 class EventsController < ApplicationController
 
+  def menu
+    event = Event.find(params[:id])
+    session[:event_id] = event.id
+  end
+
   def index
     @events = Event.all
   end
-  @event
 
   def show
     @event = Event.find(params[:id])
