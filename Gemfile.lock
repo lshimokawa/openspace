@@ -106,6 +106,8 @@ GEM
       activesupport (= 3.2.1)
       bundler (~> 1.0)
       railties (= 3.2.1)
+    rails_autolink (1.0.5)
+      rails (~> 3.1)
     railties (3.2.1)
       actionpack (= 3.2.1)
       activesupport (= 3.2.1)
@@ -172,6 +174,7 @@ DEPENDENCIES
   omniauth-twitter
   pg
   rails (= 3.2.1)
+  rails_autolink
   rspec-rails
   ruby_gntp
   sass-rails (~> 3.2.3)

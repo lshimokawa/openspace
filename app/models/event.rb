@@ -4,4 +4,7 @@ class Event < ActiveRecord::Base
   has_many :time_slots
   validates_presence_of :name
   
+  def agenda
+  end
+  
 end

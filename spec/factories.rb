@@ -25,6 +25,7 @@ FactoryGirl.define do
     starts '09:00'
     ends '10:00'
     location
+    event
   end
 
 end

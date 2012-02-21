@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20120221024838) do
     t.datetime "ending_at"
     t.string   "where"
     t.string   "status",      :default => "created"
+    t.string   "website"
     t.string   "hashtag"
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false

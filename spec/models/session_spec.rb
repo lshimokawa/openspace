@@ -13,7 +13,7 @@ describe Session do
     it { should have(1).error_on(:status) } 
   end
   
-  context "when has a type type" do 
+  context "when has a valid type" do 
     let(:session) { Factory.build(:session, session_type: 'charla') } 
     it { should have(0).error_on(:session_type) } 
   end

@@ -9,11 +9,13 @@
 <div data-role="collapsible-set" data-theme="b">
   <div data-role="collapsible" data-collapsed="false">
     <h3>Datos principales</h3>
-    <p>Nombre: <%= @event.name %>
+    <p>Nombre del evento: <%= @event.name %>
     <% unless @event.starting_at.nil? %>
       <p>Cuando: <%= @event.starting_at.strftime('%d/%m/%Y de %H:%M') + ' a '+ @event.ending_at.strftime('%H:%M')%></p>
       <p>Donde: <%= @event.where %></p>
     <% end %>
+    <p>Website: <%= href_link(@event.website) %></p>
+    <p>Twitter hashtag: <%= twitter_hashtag_search_link(@event.hashtag) %></p>
   </div>
 
   <div data-role="collapsible">

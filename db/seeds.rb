@@ -15,7 +15,8 @@ aol5 = Event.create(
   starting_at: DateTime.new(2012, 02, 25, 9, 0),
   ending_at: DateTime.new(2012, 02, 25, 18, 0),
   where: 'Universidad San Martín de Porres. Facultad de Arquitectura e Ingeniería',
-  hashtag: '#agileopenlima'
+  website: 'http://agileopenlima.eventbrite.com',
+  hashtag: 'agileopenlima'
 )
 
 auditorio = aol5.locations.create(name: 'Auditorio Primus Interpares')
