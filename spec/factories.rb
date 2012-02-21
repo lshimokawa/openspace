@@ -1,24 +1,30 @@
-Factory.define :user do |f|
-  f.name 'Lennon Shimokawa'
-  f.nickname 'lshimokawa'
-  f.role 'guest'
-end
+FactoryGirl.define do
 
-Factory.define :event do |f|
-  f.name 'Agile Open Lima V'
-end
+  factory :user do
+    name 'Lennon Shimokawa'
+    nickname 'lshimokawa'
+    role 'guest'
+  end
 
-Factory.define :session do |f|
-  f.title 'Test'
-  f.status 'created'
-  f.proposed_by 'Lennon Shimokawa'
-end
+  factory :event do
+    name 'Agile Open Lima V'
+  end
 
-Factory.define :location do |f|
-  f.name 'Ambiente 1'
-end
+  factory :session do
+    title 'Test'
+    session_type 'charla'
+    status 'created'
+    proposed_by 'Lennon Shimokawa'
+  end
 
-Factory.define :time_slot do |f|
-  f.starts '09:00'
-  f.ends '10:00'
+  factory :location do
+    name 'Ambiente 1'
+  end
+
+  factory :time_slot do
+    starts '09:00'
+    ends '10:00'
+    location
+  end
+
 end
