@@ -5,7 +5,9 @@
 
 <ul data-role="listview">
   <% @event.time_slots.each do |slot| %>
-    <li data-role="list-divider"><%= slot.starts.strftime('%H:%M') %> - <%= slot.ends.strftime('%H:%M') %></li>
-    <li><%= slot.name %></li>
+    <li>
+      <h3><%= slot.starts.strftime('%H:%M') %> - <%= slot.ends.strftime('%H:%M') %>: <%= slot.location.name %></h3>
+      <p><%= slot.name %></p>
+    </li>
   <% end %>
 </ul>
