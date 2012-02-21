@@ -1,26 +1,25 @@
 <%= content_for :header do %>
   <%= link_to "Sesiones", event_sessions_path(current_event), 'data-icon'=> 'back' %>
   <h1><%= @session.title %></h1>
+  <%= link_to 'Editar', edit_event_session_path(current_event, @session), 'data-role'=>'button', 'data-icon'=>'gear' if can? :manage, @session %>
+<% end %>  
+
+<% if current_user %>
+  <%= button_to "Votar por esta sesión", vote_event_session_path(current_event, @session), 'data-role'=>'button', 'data-theme'=>'b' unless current_user.voted? @session %>
+  <%= button_to "No votar por esta sesión", unvote_event_session_path(current_event, @session), 'data-role'=>'button', 'data-theme'=>'a' if current_user.voted? @session %>
 <% end %>
 
-<div data-role="controlgroup" data-type="horizontal" >  
-  <%= link_to 'Editar', edit_event_session_path(current_event, @session), 'data-role'=>'button' if can? :edit, @session %>
-  <%= link_to 'Eliminar', event_session_path(current_event, @session), 'data-role'=>'button', method: :delete, confirm: 'Are you sure?' if can? :delete, @session %>
-  <%= link_to "Votar", {:controller => "voting", :action => "create", :id => @session.id}, 'data-role'=>'button' if current_user %>
+<div data-role="collapsible-set">
+  <div data-role="collapsible" data-collapsed="false">
+    <h3>Datos de la sesión</h3>
+    <p>Sesión propuesta por <%= @session.proposed_by %>, tiene <%= pluralize(@session.up_votes, 'voto') %></p>
+    <p>Tipo de sesión: <%= @session.session_type.capitalize %></p>
+    <p>Registrado por <%= twitter_link(@session.user.nickname) %></p>
+  </div>
+
+  <div data-role="collapsible" data-collapsed="true">
+    <h3>Descripción</h3>
+    <p><%= @session.description %></p>
+  </div>
+
 </div>
-
-<div data-role="collapsible" data-collapsed="false">
-  <h3>Datos de la sesión</h3>
-  <p>Sesión propuesta por <%= @session.proposed_by %>, tiene <%= pluralize(@session.up_votes, 'voto') %></p>
-  <p>Tipo de sesión: <%= @session.session_type.capitalize %></p>
-  <p>Registrado por <%= twitter_link(@session.user.nickname) %></p>
-</div>
-
-
-<div data-role="collapsible" data-collapsed="false">
-  <h3>Descripción</h3>
-  <p><%= @session.description %></p>
-</div>
-
-
-

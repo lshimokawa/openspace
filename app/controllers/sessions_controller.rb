@@ -1,5 +1,17 @@
 class SessionsController < ApplicationController
 
+  def vote
+    @session = Session.find(params[:id])
+    current_user.up_vote!(@session)
+    redirect_to event_session_path(current_event, @session)
+  end  
+  
+  def unvote
+    @session = Session.find(params[:id])
+    current_user.unvote!(@session)
+    redirect_to event_session_path(current_event, @session)
+  end
+  
   def index
     @sessions = Session.order(:title)
   end

@@ -6,17 +6,20 @@ Openspace::Application.routes.draw do
   match "/signout" => "authentication#destroy", :as => :signout
 
   resources :events do
-    resources :sessions
-    resources :agenda
     member do
       get 'agenda'
       get 'menu'
     end
+
+    resources :sessions do 
+      member do
+        post 'vote'
+        post 'unvote'
+      end
+    end
   end
 
-  resources :users
-  
-  match "/sessions/:id/vote" => "voting#create"
+  resources :users  
   match "/openspace" => "navigation#openspace"
   match "/about" => "navigation#about"
   

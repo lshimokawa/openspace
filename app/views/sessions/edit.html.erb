@@ -1,5 +1,7 @@
 <%= content_for :header do %>
   <%= link_to "Sesiones", event_sessions_path(current_event), 'data-icon'=> 'back' %>
+  <%= link_to 'Eliminar', event_session_path(current_event, @session), 'data-role'=>'button', 'data-icon'=>'delete', method: :delete, confirm: 'Are you sure?' if can? :delete, @session %>
   <h1>Editar sesión</h1>
 <% end %>
 <%= render 'form' %>
+
