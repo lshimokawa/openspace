@@ -1,5 +1,5 @@
 <%= content_for :header do %>
-  <%= link_to "Sesiones", sessions_path, 'data-icon'=> 'back' %>
+  <%= link_to "Sesiones", event_sessions_path(current_event), 'data-icon'=> 'back' %>
   <h1>Editar sesión</h1>
 <% end %>
 <%= render 'form' %>

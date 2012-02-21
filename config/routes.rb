@@ -8,13 +8,15 @@ Openspace::Application.routes.draw do
   resources :events do
     resources :sessions
     resources :agenda
+    member do
+      get 'agenda'
+      get 'menu'
+    end
   end
 
   resources :users
   
-  match "/events/:id/menu" => "events#menu", :as => "event_menu"
   match "/sessions/:id/vote" => "voting#create"
-  match "/agenda" => "agenda#show"
   match "/about" => "events#show"
   get "navigation/index"
   

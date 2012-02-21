@@ -3,7 +3,7 @@
   <% if current_user %>
     <%= link_to "Sign Out", signout_path, 'data-role'=> 'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right' %>
   <% else %>
-    <%= link_to "Sign in with Twitter", "/auth/twitter", 'data-role'=>'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right', :rel => 'external' %>
+    <%= link_to "Sign in", "/auth/twitter", 'data-role'=>'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right', :rel => 'external' %>
   <% end %>
 <% end %>
 
@@ -13,7 +13,7 @@
   <ul data-role="listview">
   <% @events.each do |event| %>
   	<li>
-  	  <%= link_to event.name, event_menu_path(event) %>
+  	  <%= link_to event.name, menu_event_path(event) %>
   	</li>
   <% end %>
   </ul>

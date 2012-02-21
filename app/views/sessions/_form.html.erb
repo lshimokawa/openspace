@@ -1,4 +1,4 @@
-<%= form_for(@session) do |f| %>
+<%= form_for [current_event, @session] do |f| %>
   <% if @session.errors.any? %>
     <div id="error_explanation">
       <ul>

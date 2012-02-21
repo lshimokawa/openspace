@@ -1,5 +1,5 @@
 <%= content_for :header do %>
-  <%= link_to "Regresar", event_menu_path(current_event), 'data-icon'=> 'back' %>
+  <%= link_to "Evento", menu_event_path(current_event), 'data-icon'=> 'back' %>
   <h1>Sesiones propuestas</h1>
   <%= link_to "Proponer", new_event_session_path(current_event), 'data-icon'=> 'plus' if can? :create, Session %>
 <% end %>

@@ -1,5 +1,5 @@
 <%= content_for :header do %>
-  <%= link_to "Inicio", root_path, 'data-icon'=> 'home' %>
+  <%= link_to "Evento", menu_event_path(current_event), 'data-icon'=> 'back' %>
   <h1><%= @event.name %></h1>
 <% end %>
 
@@ -21,4 +21,13 @@
 <div data-role="collapsible" data-collapsed="false">
   <h3>Descripción</h3>
   <p><%= @event.description %></p>
+</div>
+
+<div data-role="collapsible" data-collapsed="true">
+   <h3>Ambientes</h3>
+   <ul data-role="listview">
+      <% @event.locations.each do |location| %>
+        <li><%= location.name %></li>
+      <% end %>
+   </ul>
 </div>

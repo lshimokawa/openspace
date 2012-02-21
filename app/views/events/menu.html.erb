@@ -4,10 +4,11 @@
   <% if current_user %>
     <%= link_to "Sign Out", signout_path, 'data-role'=> 'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right' %>
   <% else %>
-    <%= link_to "Sign in with Twitter", "/auth/twitter", 'data-role'=>'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right', :rel => 'external' %>
+    <%= link_to "Sign in", "/auth/twitter", 'data-role'=>'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right', :rel => 'external' %>
   <% end %>
 <% end %>
 
 <%= link_to "Proponer una sesión", new_event_session_path(current_event), 'data-role'=> 'button' if can? :create, Session %>
 <%= link_to "Sesiones", event_sessions_path(current_event), 'data-role'=> 'button' %>
-<%= link_to "Agenda", event_agenda_path(current_event), 'data-role'=> 'button' %>
+<%= link_to "Agenda", agenda_event_path(current_event), 'data-role'=> 'button' %>
+<%= link_to "Sobre el evento", event_path(current_event), 'data-role'=> 'button' %>

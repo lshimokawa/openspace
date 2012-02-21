@@ -1,1 +1,5 @@
+<%= content_for :header do %>
+  <h1>Administración</h1>
+<% end %>
+
 <%= link_to "Eventos", events_path, 'data-role'=> 'button' if can? :manage, Event %>
