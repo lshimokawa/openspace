@@ -3,19 +3,18 @@ require 'spec_helper'
 describe User do
   subject { user }
   let(:user) { Factory.build(:user) } 
+  it { should be_valid } 
   
-  context "should be valid" do 
-    it { should be_valid } 
-  end
-  
-  context "should be valid with valid roles" do 
-    let(:user) { Factory.build(:user, role: 'admin') } 
-    it { should be_valid } 
-  end
-   
-  context "should not be valid with invalid roles" do 
-    let(:user) { Factory.build(:user, role: 'XXX') } 
-    it { should have(1).error_on(:role) } 
+  describe "validations" do 
+    context "of role" do 
+      it "should accept valid roles" do
+        Factory.build(:user, role: 'admin').should be_valid
+      end
+      
+      it "should reject invalid roles" do
+        Factory.build(:user, role: 'XXX').should_not be_valid
+      end
+    end
   end
   
 end
