@@ -4,6 +4,9 @@ class EventsController < ApplicationController
     event = Event.find(params[:id])
     session[:event_id] = event.id
   end
+  
+  def agenda
+  end
 
   def index
     @events = Event.all
