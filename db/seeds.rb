@@ -19,14 +19,19 @@ aol5 = Event.create(
 )
 
 auditorio = aol5.locations.create(name: 'Auditorio Primus Interpares')
-aol5.locations.create(name: 'Generales 101')
-aol5.locations.create(name: 'Generales 102')
-aol5.locations.create(name: 'Generales 103')
-aol5.locations.create(name: 'Generales 104')
-aol5.locations.create(name: 'Generales 105')
-aol5.locations.create(name: 'Generales 106')
+g101 = aol5.locations.create(name: 'Generales 101')
+g102 = aol5.locations.create(name: 'Generales 102')
+g103 = aol5.locations.create(name: 'Generales 103')
+g104 = aol5.locations.create(name: 'Generales 104')
+g105 = aol5.locations.create(name: 'Generales 105')
+g106 = aol5.locations.create(name: 'Generales 106')
 
-TimeSlot.create(starts: '09:00', ends: '11:00', event: aol5, location: auditorio)
+TimeSlot.create(name: 'Bienvenida', starts: '09:00', ends: '09:30', event: aol5, location: auditorio)
+TimeSlot.create(name: 'Marketplace', starts: '09:30', ends: '11:00', event: aol5, location: auditorio)
+TimeSlot.create(name: 'Sesiones 1', starts: '11:00', ends: '12:00', event: aol5, location: g101)
+TimeSlot.create(name: 'Sesiones 1', starts: '11:00', ends: '12:00', event: aol5, location: g102)
+TimeSlot.create(name: 'Sesiones 1', starts: '11:00', ends: '12:00', event: aol5, location: g103)
+TimeSlot.create(name: 'Sesiones 1', starts: '11:00', ends: '12:00', event: aol5, location: g104)
 
 Session.create(
   title: 'Gamestorming', 

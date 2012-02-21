@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20120221024838) do
   end
 
   create_table "time_slots", :force => true do |t|
+    t.string   "name"
     t.time     "starts"
     t.time     "ends"
     t.datetime "created_at",  :null => false

@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   end
   
   def agenda
+    @event = Event.find(params[:id])
   end
 
   def index
