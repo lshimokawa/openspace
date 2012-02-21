@@ -6,7 +6,7 @@
   <% end %>
 <% end %>
 
-<div data-role="collapsible-set">
+<div data-role="collapsible-set" data-theme="b">
   <div data-role="collapsible" data-collapsed="false">
     <h3>Datos principales</h3>
     <p>Nombre: <%= @event.name %>
@@ -16,14 +16,14 @@
     <% end %>
   </div>
 
-  <div data-role="collapsible" data-collapsed="true">
+  <div data-role="collapsible">
     <h3>Descripción</h3>
     <p><%= @event.description %></p>
   </div>
 
-  <div data-role="collapsible" data-collapsed="true">
+  <div data-role="collapsible">
      <h3>Ambientes</h3>
-     <ul>
+     <ul data-role="listview" data-inset="true">
         <% @event.locations.each do |location| %>
           <li><%= location.name %></li>
         <% end %>
