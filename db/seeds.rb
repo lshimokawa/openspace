@@ -18,11 +18,15 @@ aol5 = Event.create(
   hashtag: '#agileopenlima'
 )
 
-aol5.locations.create(name: 'Auditorio')
-aol5.locations.create(name: 'Aula 1')
-aol5.locations.create(name: 'Aula 2')
-aol5.locations.create(name: 'Aula 3')
-aol5.locations.create(name: 'Aula 4')
+auditorio = aol5.locations.create(name: 'Auditorio Primus Interpares')
+aol5.locations.create(name: 'Generales 101')
+aol5.locations.create(name: 'Generales 102')
+aol5.locations.create(name: 'Generales 103')
+aol5.locations.create(name: 'Generales 104')
+aol5.locations.create(name: 'Generales 105')
+aol5.locations.create(name: 'Generales 106')
+
+TimeSlot.create(starts: '09:00', ends: '11:00', event: aol5, location: auditorio)
 
 Session.create(
   title: 'Gamestorming', 

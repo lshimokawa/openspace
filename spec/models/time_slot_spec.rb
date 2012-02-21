@@ -1,5 +1,14 @@
 require 'spec_helper'
 
 describe TimeSlot do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { time_slot }
+  
+  context "is valid" do 
+    let(:time_slot) { 
+      Factory.build(:time_slot, 
+        event: Factory.build(:event), 
+      ) 
+    } 
+    it { should be_valid } 
+  end 
 end

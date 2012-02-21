@@ -5,6 +5,7 @@ class Session < ActiveRecord::Base
   belongs_to :user
   belongs_to :event
   has_one :location
+  has_one :time_slot
   make_voteable
   validates_presence_of :title, :proposed_by
   #validates_inclusion_of :session_type, :in => SESSION_TYPES
