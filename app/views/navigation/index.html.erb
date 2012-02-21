@@ -17,10 +17,12 @@
 </ul>
 
 <%= content_for :footer do %>
-  <div data-role="navbar">
-		<ul>
-			<li><%= link_to "Sobre los Open Space", openspace_path, "data-icon"=>"star" %></li>
-			<li><%= link_to "Acerca de", about_path, "data-icon"=>"info" %></li>
-		</ul>
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+  		<ul>
+  			<li><%= link_to "Sobre los Open Space", openspace_path, "data-icon"=>"star" %></li>
+  			<li><%= link_to "Acerca de", about_path, "data-icon"=>"info" %></li>
+  		</ul>
+  	</div>
 	</div>
 <% end %>

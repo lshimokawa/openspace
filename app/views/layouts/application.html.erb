@@ -21,9 +21,8 @@
       <div id="error"><%= flash[:error] %></div>
       <%= yield %>
     </div> 
-    <div data-role="footer" data-position="fixed">
-      <%= yield :footer %>		
-    </div>   
+    
+    <%= yield :footer %>		
   </div>
 </body>
 
