@@ -17,8 +17,8 @@ Openspace::Application.routes.draw do
   resources :users
   
   match "/sessions/:id/vote" => "voting#create"
-  match "/about" => "events#show"
-  get "navigation/index"
+  match "/openspace" => "navigation#openspace"
+  match "/about" => "navigation#about"
   
   root :to => 'navigation#index'
 

@@ -11,7 +11,7 @@
   <% @sessions.each do |session| %>
   	<li>
   	  <%= link_to session.title, event_session_path(current_event, session) %>
-  	  <span class="ui-li-count"><%= session.up_votes %></span>
+  	  <span class="ui-li-count">Votos: <%= session.up_votes %></span>
   	</li>
   <% end %>
   </ul>

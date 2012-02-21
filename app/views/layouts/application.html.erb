@@ -13,18 +13,17 @@
 
 <body>  
   <div data-role="page">
-    <div data-role="header">
+    <div data-role="header" data-position="fixed">
       <%= yield :header %>
-    </div>
-    <div data-role="navbar" data-theme="d">
-      <ul><%= yield :navbar %></ul>
     </div>
     <div data-role="content">
       <div id="notice"><%= flash[:notice] %></div>
       <div id="error"><%= flash[:error] %></div>
       <%= yield %>
     </div> 
-   
+    <div data-role="footer" data-position="fixed">
+      <%= yield :footer %>		
+    </div>   
   </div>
 </body>
 

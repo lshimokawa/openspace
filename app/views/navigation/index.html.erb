@@ -7,14 +7,20 @@
   <% end %>
 <% end %>
 
-<% if @events.empty? %>
-  No hay eventos activos.
-<% else %>
-  <ul data-role="listview">
+<ul data-role="listview" data-theme="d">
+  <li data-role="list-divider">Eventos</li>
   <% @events.each do |event| %>
   	<li>
   	  <%= link_to event.name, menu_event_path(event) %>
   	</li>
   <% end %>
-  </ul>
+</ul>
+
+<%= content_for :footer do %>
+  <div data-role="navbar">
+		<ul>
+			<li><%= link_to "Sobre los Open Space", openspace_path, "data-icon"=>"star" %></li>
+			<li><%= link_to "Acerca de", about_path, "data-icon"=>"info" %></li>
+		</ul>
+	</div>
 <% end %>
