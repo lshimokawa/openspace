@@ -1,6 +1,7 @@
 Factory.define :user do |f|
   f.name 'Lennon Shimokawa'
   f.nickname 'lshimokawa'
+  f.role 'guest'
 end
 
 Factory.define :event do |f|

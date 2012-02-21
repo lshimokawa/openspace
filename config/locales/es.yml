@@ -198,6 +198,7 @@ es:
     errors:
       messages:
         blank: 'no puede estar vacío'
+        record_invalid: 'registro no válido'
     attributes:
       event: 
         name: "Nombre"
@@ -209,6 +210,4 @@ es:
         session_type: "Tipo"
         description: "Descripción"
         status: "Estado"
-
-
           
