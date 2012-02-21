@@ -1,14 +1,2 @@
 Open Space
-
-User Stories
-
-Como asistente deseo poder consultar las sesiones propuestas
-Como asistente deseo poder ver la agenda programa del Open Space
-
-Como participante deseo proponer sesiones en el Open Space para participar
-Como participante deseo poder votar por las sesiones de mi preferencia para priorizar la agenda
-
-Como facilitador deseo poder visualizar las sesiones ordenadas por votos para elaborar la agenda
-Como facilitador deseo poder elaborar la agenda de sesiones para iniciar el Open Space
-
-Como organizador deseo poder crear un Open Space
+Event manager mobile application that supports Open Spaces
