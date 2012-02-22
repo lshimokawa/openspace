@@ -9,9 +9,7 @@
     <li>
       <h3><%= item.title %></h3>
       <p>
-        <% item.slots.each do |slot| %>
-          <%= slot.location.name %>
-        <% end %>
+        <%= item.slots.map { |f| f.location.name }.join ', ' %>
       </p>
     </li>
   <% end %>
