@@ -106,8 +106,6 @@ GEM
       activesupport (= 3.2.1)
       bundler (~> 1.0)
       railties (= 3.2.1)
-    rails_autolink (1.0.5)
-      rails (~> 3.1)
     railties (3.2.1)
       actionpack (= 3.2.1)
       activesupport (= 3.2.1)
@@ -143,6 +141,10 @@ GEM
       ffi (~> 1.0.9)
       json_pure
       rubyzip
+    simplecov (0.5.4)
+      multi_json (~> 1.0.3)
+      simplecov-html (~> 0.5.3)
+    simplecov-html (0.5.3)
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -174,9 +176,9 @@ DEPENDENCIES
   omniauth-twitter
   pg
   rails (= 3.2.1)
-  rails_autolink
   rspec-rails
   ruby_gntp
   sass-rails (~> 3.2.3)
+  simplecov
   sqlite3
   uglifier (>= 1.0.3)

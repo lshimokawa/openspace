@@ -5,7 +5,6 @@ gem 'jquery-rails'
 gem 'omniauth-twitter'
 gem 'make_voteable'
 gem 'cancan'
-gem 'rails_autolink'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -16,6 +15,7 @@ end
 group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'simplecov', :require => false
 end
 
 group :development do
