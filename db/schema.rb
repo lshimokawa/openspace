@@ -37,8 +37,9 @@ ActiveRecord::Schema.define(:version => 20120222023754) do
 
   create_table "locations", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "event_id"
   end
 

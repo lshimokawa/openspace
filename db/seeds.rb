@@ -21,12 +21,12 @@ aol5 = Event.create(
 
 auditorio = aol5.locations.create(name: 'Auditorio Primus Interpares')
 patio = aol5.locations.create(name: 'Zona de almuerzo')
-g101 = aol5.locations.create(name: 'Aula 101 (Pabellón Generales)')
-g102 = aol5.locations.create(name: 'Aula 102 (Pabellón Generales)')
-g103 = aol5.locations.create(name: 'Aula 103 (Pabellón Generales)')
-g104 = aol5.locations.create(name: 'Aula 104 (Pabellón Generales)')
-g105 = aol5.locations.create(name: 'Aula 105 (Pabellón Generales)')
-g106 = aol5.locations.create(name: 'Aula 106 (Pabellón Generales)')
+g101 = aol5.locations.create(name: 'Aula 101', description: 'Pabellón Generales')
+g102 = aol5.locations.create(name: 'Aula 102', description: 'Pabellón Generales')
+g103 = aol5.locations.create(name: 'Aula 103', description: 'Pabellón Generales')
+g104 = aol5.locations.create(name: 'Aula 104', description: 'Pabellón Generales')
+g105 = aol5.locations.create(name: 'Aula 105', description: 'Pabellón Generales')
+g106 = aol5.locations.create(name: 'Aula 106', description: 'Pabellón Generales')
 
 bienvenida = AgendaDetail.create(title: 'Bienvenida',   starts: '09:00', ends: '09:30', event: aol5)
 marketplace = AgendaDetail.create(title: 'Marketplace',  starts: '09:30', ends: '11:00', event: aol5)

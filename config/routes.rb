@@ -22,6 +22,8 @@ Openspace::Application.routes.draw do
   #administration
   match "/admin" => "admin#index"
   
+  match "/events/:event_id/slots/" => "slot#index"
+  
   #navigation
   match "/openspace" => "navigation#openspace"
   match "/about" => "navigation#about"

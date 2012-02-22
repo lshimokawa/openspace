@@ -9,18 +9,16 @@
   <%= button_to "No votar por esta sesión", unvote_event_session_path(current_event, @session), 'data-role'=>'button', 'data-theme'=>'a' if current_user.voted? @session %>
 <% end %>
 
-<div data-role="collapsible-set" data-theme="b">
-  <div data-role="collapsible" data-collapsed="false">
-    <h3>Datos de la sesión</h3>
+<ul data-role="listview" data-inset="true">  
+  <li data-role="list-divider">Datos de la sesión</li>
+  <li>
     <p>Propuesta por: <%= @session.proposed_by %></p>
     <p>Tiene <%= pluralize(@session.up_votes, 'voto') %><% if current_user and current_user.voted? @session %><b>&nbsp;(has votado por esta sesión)</b><% end %></p>
     <p>Tipo de sesión: <%= @session.session_type.capitalize %></p>
     <p>Registrado por <%= twitter_link(@session.user.nickname) %></p>
-  </div>
+  </li>
 
-  <div data-role="collapsible">
-    <h3>Descripción</h3>
-    <p><%= @session.description %></p>
-  </div>
+  <li data-role="list-divider">Descripción</li>
+  <li><p><%= @session.description %></p></li>
 
-</div>
+</ul>
