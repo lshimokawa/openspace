@@ -1,2 +1,2 @@
-Open Space
+#Open Spaces
 Event manager mobile application that supports Open Spaces
