@@ -4,10 +4,9 @@
 <% end %>
 
 <ul data-role="listview">
-  <% @event.time_slots.each do |slot| %>
+  <% @event.agenda_details.each do |item| %>
     <li>
-      <h3><%= slot.starts.strftime('%H:%M') %> - <%= slot.ends.strftime('%H:%M') %>: <%= slot.location.name %></h3>
-      <p><%= slot.name %></p>
+      <h3><%= item.starts.strftime('%H:%M') %> - <%= item.ends.strftime('%H:%M') %>: <%= item.title %></h3>
     </li>
   <% end %>
 </ul>
