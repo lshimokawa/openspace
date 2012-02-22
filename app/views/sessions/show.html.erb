@@ -12,6 +12,7 @@
 <ul data-role="listview" data-inset="true">  
   <li data-role="list-divider">Datos de la sesión</li>
   <li>
+    <h3><%= @session.title %></h3>
     <p>Propuesta por: <%= @session.proposed_by %></p>
     <p>Tiene <%= pluralize(@session.up_votes, 'voto') %><% if current_user and current_user.voted? @session %><b>&nbsp;(has votado por esta sesión)</b><% end %></p>
     <p>Tipo de sesión: <%= @session.session_type.capitalize %></p>
