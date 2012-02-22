@@ -4,9 +4,15 @@
 <% end %>
 
 <ul data-role="listview">
-  <% @event.agenda_details.each do |item| %>
+  <% @agenda.each do |item| %>
+    <li data-role="list-divider"><%= item.starts.strftime('%H:%M') %> - <%= item.ends.strftime('%H:%M') %></li>
     <li>
-      <h3><%= item.starts.strftime('%H:%M') %> - <%= item.ends.strftime('%H:%M') %>: <%= item.title %></h3>
+      <h3><%= item.title %></h3>
+      <p>
+        <% item.slots.each do |slot| %>
+          <%= slot.location.name %>
+        <% end %>
+      </p>
     </li>
   <% end %>
 </ul>

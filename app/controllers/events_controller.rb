@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   end
   
   def agenda
-    @event = Event.find(params[:id])
+    @agenda = Event.find(params[:id]).agenda_details.order(:starts)
   end
 
   def index

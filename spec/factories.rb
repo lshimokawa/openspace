@@ -27,5 +27,10 @@ FactoryGirl.define do
     ends '10:00'
     event
   end
+  
+  factory :slot do
+    agenda_detail
+    location
+  end
 
 end

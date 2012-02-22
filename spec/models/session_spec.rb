@@ -2,16 +2,18 @@ require 'spec_helper'
 
 describe Session do
   subject { session }
-  let(:session) { Factory.build(:session) } 
-  it { should be_valid }
   
   describe "validation" do 
+    it "should be valid" do
+      Factory.build(:session).should be_valid
+    end
+    
     context "of title" do 
       it "requires presence" do
         Factory.build(:session, title: '').should_not be_valid
       end
     end
-    
+  
     context "of proposed_by" do 
       it "requires presence" do
         Factory.build(:session, proposed_by: '').should_not be_valid
