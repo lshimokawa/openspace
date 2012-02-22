@@ -21,10 +21,10 @@ FactoryGirl.define do
     name 'Ambiente 1'
   end
 
-  factory :time_slot do
+  factory :agenda_detail do
+    title 'Punto de la agenda'
     starts '09:00'
     ends '10:00'
-    location
     event
   end
 
