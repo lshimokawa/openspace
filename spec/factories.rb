@@ -1,6 +1,8 @@
 FactoryGirl.define do
 
   factory :user do
+    uid '12345'
+    provider 'twitter'
     name 'Lennon Shimokawa'
     nickname 'lshimokawa'
     role 'assistant'
