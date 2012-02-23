@@ -1,0 +1,11 @@
+<%= content_for :header do %>
+  <%= link_to "Agenda", agenda_event_path(current_event), 'data-icon'=> 'back' %>
+  <h1>Detalle de agenda</h1>
+<% end %>
+
+<ul data-role="listview" data-inset="true">
+  <li data-role="list-divider"><%= "#{@agenda.starts.strftime('%H:%M')} - #{@agenda.ends.strftime('%H:%M')}: #{@agenda.title}" %></li>
+  <% @agenda.slots.each do |slot| %>
+    <li><%= slot.location.name %></li>
+  <% end %>
+</ul>

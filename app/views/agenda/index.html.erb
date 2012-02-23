@@ -5,12 +5,10 @@
 
 <ul data-role="listview" data-inset="true">
   <% @agenda.each do |item| %>
-    <li data-role="list-divider"><%= item.starts.strftime('%H:%M') %> - <%= item.ends.strftime('%H:%M') %></li>
-    <li>
-      <h3><%= item.title %></h3>
-      <p>
-        <%= item.slots.map { |f| f.location.name }.join ', ' %>
-      </p>
-    </li>
+  <li>
+    <%= link_to event_agenda_path(current_event, item) do  %>
+      <%= "#{item.starts.strftime('%H:%M')} - #{item.ends.strftime('%H:%M')}: #{item.title}" %>
+    <% end %>
+  </li>
   <% end %>
 </ul>
