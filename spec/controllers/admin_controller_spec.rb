@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe AdminController do
+  render_views
 
   describe "GET 'index'" do
     it "returns http success" do

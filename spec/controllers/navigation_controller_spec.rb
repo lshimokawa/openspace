@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe NavigationController do
+  render_views
   
   it "should respond to '/about'" do
     get 'about'
