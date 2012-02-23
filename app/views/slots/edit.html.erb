@@ -1,5 +1,5 @@
 <%= content_for :header do %>
-  <h1><%= @slot.agenda.starts_ends_title %></h1>
+  <h1>Asignar</h1>
 <% end %>
 
 <%= form_for [current_event, @slot] do |f| %>
@@ -12,7 +12,7 @@
       </ul>
     </div>
   <% end %>
-
+  <h2><%= @slot.agenda.starts_ends_title %></h2>
   <%= f.label :location %><%= f.select :location_id, Location.where(event_id: current_event.id).collect {|l| [ l.name, l.id ] } %>
   <%= f.label :session %><%= f.select :session_id, Session.where(event_id: current_event.id).collect {|l| [ l.title, l.id ] }, {:include_blank => 'Sin asignar'} %>
   

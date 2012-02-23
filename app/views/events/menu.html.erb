@@ -1,16 +1,21 @@
 <%= content_for :header do %>
   <%= link_to "Inicio", root_path, 'data-icon'=> 'home' %>
-  <h1><%= current_event.name %></h1>
+  <h1>Evento</h1>
   <% if current_user %>
-    <%= link_to "Sign Out", signout_path, 'data-role'=> 'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right' %>
+    <%= link_to "Logout", signout_path, 'data-role'=> 'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right' %>
   <% else %>
-    <%= link_to "Sign in", "/auth/twitter", 'data-role'=>'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right', :rel => 'external' %>
+    <%= link_to "Signin", "/auth/twitter", 'data-role'=>'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right', :rel => 'external' %>
   <% end %>
 <% end %>
 
-<%= link_to "Información del evento", event_path(current_event), 'data-role'=> 'button' %>
-<%= link_to "Agenda", event_agenda_index_path(current_event), 'data-role'=> 'button' %>
-<%= link_to "Proponer una sesión", new_event_session_path(current_event), 'data-role'=> 'button' if can? :create, Session %>
-<%= link_to "Sesiones", event_sessions_path(current_event), 'data-role'=> 'button' %>
+<ul data-role="listview" data-inset="true">
+  <li data-role="list-divider"><%= current_event.name %></li>
+  <li><%= link_to "Información del evento", event_path(current_event) %></li>
+  <li><%= link_to "Agenda", event_agenda_index_path(current_event) %></li>
+  <% if can? :create, Session %>
+    <li><%= link_to "Proponer una sesión", new_event_session_path(current_event) %></li>
+  <% end %>
+  <li><%= link_to "Sesiones", event_sessions_path(current_event) %></li>
+</ul>
 
 
