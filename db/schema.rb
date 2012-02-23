@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20120222023754) do
 
-  create_table "agenda_details", :force => true do |t|
+  create_table "agendas", :force => true do |t|
     t.string   "title"
     t.time     "starts"
     t.time     "ends"
@@ -60,10 +60,10 @@ ActiveRecord::Schema.define(:version => 20120222023754) do
   end
 
   create_table "slots", :force => true do |t|
-    t.integer  "agenda_detail_id"
+    t.integer  "agenda_id"
     t.integer  "location_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

@@ -7,7 +7,6 @@ Openspace::Application.routes.draw do
   
   resources :events do
     member do
-      get 'agenda'
       get 'menu'
     end
 
@@ -17,12 +16,14 @@ Openspace::Application.routes.draw do
         post 'unvote'
       end
     end
+    
+    resources :agenda
   end
 
   #administration
   match "/admin" => "admin#index"
   
-  match "/events/:event_id/slots/" => "slot#index"
+  match "/events/:event_id/slots" => "slots#index"
   
   #navigation
   match "/openspace" => "navigation#openspace"

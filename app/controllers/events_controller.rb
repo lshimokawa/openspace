@@ -5,10 +5,6 @@ class EventsController < ApplicationController
     session[:event_id] = event.id
   end
   
-  def agenda
-    @agenda = Event.find(params[:id]).agenda_details.order(:starts)
-  end
-
   def index
     @events = Event.all
   end
