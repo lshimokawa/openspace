@@ -4,8 +4,8 @@
 <% end %>
 
 <ul data-role="listview" data-inset="true">
-  <li data-role="list-divider"><%= "#{@agenda.starts.strftime('%H:%M')} - #{@agenda.ends.strftime('%H:%M')}: #{@agenda.title}" %></li>
+  <li data-role="list-divider"><%= @agenda.starts_ends_title %></li>
   <% @agenda.slots.each do |slot| %>
-    <li><%= slot.location.name %></li>
+    <li><%= link_to slot.description, nil %><%= link_to "Editar", edit_event_slot_path(current_event, slot), "data-icon"=>"gear" if can? :edit, Slot %></li>    
   <% end %>
 </ul>

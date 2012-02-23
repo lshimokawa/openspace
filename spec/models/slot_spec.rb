@@ -8,7 +8,7 @@ describe Slot do
     end
     
     it "session is optional" do
-      Factory.build(:slot, session: nil).should be_valid
+      Factory.build(:slot, session: nil).should be_valid 
     end
   end
   

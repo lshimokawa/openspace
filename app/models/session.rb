@@ -4,7 +4,7 @@ class Session < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :event  
-  has_one :time_slot
+  has_many :slots
   make_voteable
   validates_presence_of :title, :proposed_by
   validates_inclusion_of :session_type, :in => SESSION_TYPES, :message => 'El tipo no es valido'

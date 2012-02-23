@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20120222023754) do
   create_table "slots", :force => true do |t|
     t.integer  "agenda_id"
     t.integer  "location_id"
+    t.integer  "session_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

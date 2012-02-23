@@ -7,7 +7,7 @@
   <% @agenda.each do |item| %>
   <li>
     <%= link_to event_agenda_path(current_event, item) do  %>
-      <%= "#{item.starts.strftime('%H:%M')} - #{item.ends.strftime('%H:%M')}: #{item.title}" %>
+      <%= item.starts_ends_title %>
     <% end %>
   </li>
   <% end %>

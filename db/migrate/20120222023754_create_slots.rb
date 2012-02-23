@@ -3,6 +3,7 @@ class CreateSlots < ActiveRecord::Migration
     create_table :slots do |t|
       t.references :agenda
       t.references :location
+      t.references :session
 
       t.timestamps
     end

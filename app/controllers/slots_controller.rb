@@ -1,12 +1,16 @@
 class SlotsController < ApplicationController
   
-  def index
-    agenda_id = params[:agenda_id]
-    @agenda = Agenda.find(agenda_id)
-    @slots = Slot.where(agenda_id: agenda_id)
+  def edit
+    @slot = Slot.find(params[:id])
   end
   
-  def edit
+  def update
+    @slot = Slot.find(params[:id])
+    if @slot.update_attributes(params[:slot])
+      redirect_to event_agenda_path(current_event, @slot.agenda)
+    else
+      render action: "edit"
+    end
   end
 
 end

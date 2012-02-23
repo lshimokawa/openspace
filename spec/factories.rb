@@ -31,6 +31,7 @@ FactoryGirl.define do
   factory :slot do
     agenda
     location
+    session
   end
 
 end
