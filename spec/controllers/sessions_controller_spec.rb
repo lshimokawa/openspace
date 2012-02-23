@@ -3,9 +3,35 @@ require 'spec_helper'
 describe SessionsController do
   render_views
 
-  it "should show all sessions of the event on GET index" do
-    get 'index'
-    response.should be_success
+  describe "GET index" do
+    it "assigns all posts as @sessions" do
+      session = Factory.create(:session)
+      get :index
+      assigns(:sessions).should eq([session])
+    end
+  end
+  
+  describe "GET show" do
+    it "assigns the requested session as @session" do
+      session = Factory.create(:session)
+      get :show, {:id => session.to_param}
+      assigns(:session).should eq(session)
+    end
+  end
+  
+  describe "GET new" do
+    it "assigns a new session as @session" do
+      get :new
+      assigns(:session).should be_a_new(Session)
+    end
+  end
+
+  describe "GET edit" do
+    it "assigns the requested session as @session" do
+      session = Factory.create(:session)
+      get :edit, {:id => session.to_param}
+      assigns(:session).should eq(session)
+    end
   end
     
   it "should vote for a session on POST vote" do

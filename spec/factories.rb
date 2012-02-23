@@ -15,6 +15,7 @@ FactoryGirl.define do
     session_type 'charla'
     status 'created'
     proposed_by 'Lennon Shimokawa'
+    user
   end
 
   factory :location do
