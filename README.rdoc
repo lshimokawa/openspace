@@ -1,2 +1,1 @@
-#Open Spaces
-Event manager mobile application that supports Open Spaces
+Event manager mobile application with Open Space Tecnology support
