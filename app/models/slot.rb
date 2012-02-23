@@ -7,9 +7,9 @@ class Slot < ActiveRecord::Base
   
   def description
     #TODO i18n
-    return "#{location.name} - #{session.title}" unless session.nil? or location.nil? 
-    return location.name  if session.nil?
-    return "Sin asignar" if session.nil? and location.nil?
+    text = location.name
+    text << " - #{session.title}" unless session.nil?
+    text
   end
   
 end

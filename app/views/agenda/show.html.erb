@@ -1,11 +1,15 @@
 <%= content_for :header do %>
-  <%= link_to "Agenda", event_agenda_path(current_event), 'data-icon'=> 'back' %>
+  <%= link_to "Agenda", event_agenda_index_path(current_event), 'data-icon'=> 'back' %>
   <h1>Detalle de agenda</h1>
 <% end %>
 
 <ul data-role="listview" data-inset="true">
   <li data-role="list-divider"><%= @agenda.starts_ends_title %></li>
   <% @agenda.slots.each do |slot| %>
-    <li><%= link_to slot.description, nil %><%= link_to "Editar", edit_event_slot_path(current_event, slot), "data-icon"=>"gear" if can? :edit, Slot %></li>    
+    <li>
+        <h3><%= slot.location.name %></h3>
+        <p><%= slot.session.title unless slot.session.nil? %></p>
+        
+    </li>    
   <% end %>
 </ul>

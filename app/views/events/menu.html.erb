@@ -9,7 +9,7 @@
 <% end %>
 
 <%= link_to "Información del evento", event_path(current_event), 'data-role'=> 'button' %>
-<%= link_to "Agenda", event_agenda_path(current_event), 'data-role'=> 'button' %>
+<%= link_to "Agenda", event_agenda_index_path(current_event), 'data-role'=> 'button' %>
 <%= link_to "Proponer una sesión", new_event_session_path(current_event), 'data-role'=> 'button' if can? :create, Session %>
 <%= link_to "Sesiones", event_sessions_path(current_event), 'data-role'=> 'button' %>
 
