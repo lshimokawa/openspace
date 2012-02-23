@@ -3,7 +3,7 @@ FactoryGirl.define do
   factory :user do
     name 'Lennon Shimokawa'
     nickname 'lshimokawa'
-    role 'guest'
+    role 'assistant'
   end
 
   factory :event do

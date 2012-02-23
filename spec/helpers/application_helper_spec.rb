@@ -11,5 +11,13 @@ require 'spec_helper'
 #   end
 # end
 describe ApplicationHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  context "link helpers" do
+    it "should return href link" do
+      #url = "http://www.google.com"
+      #helper.href_link(url).should eql("<a href='#{url}'>#{url}</a>'")       
+      pending "como pruebo un helper?"
+    end
+  end
+  
 end
