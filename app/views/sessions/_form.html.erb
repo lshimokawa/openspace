@@ -17,6 +17,9 @@
   <fieldset class="ui-grid-a">
   		<div class="ui-block-a"><%= f.submit 'Guardar', 'data-icon'=>'check', 'data-theme'=>'b' %></div>
   		<div class="ui-block-b"><%= link_to 'Cancelar', event_sessions_path(current_event), 'data-role'=>'button', 'data-icon'=>'delete' %></div>
-  </fieldset>
-  
+  </fieldset>  
+<% end %>
+
+<% unless @session.new_record? %> 
+  <%= button_to "Eliminar", event_session_path(current_event, @session), :method => :delete, 'data-icon'=>'alert'%>
 <% end %>
