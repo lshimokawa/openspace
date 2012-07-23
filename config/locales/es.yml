@@ -204,6 +204,7 @@ es:
         name: "Nombre"
         description: "Descripción"
         starting_at: "Fecha y hora"
+        where: "Donde"
       session:
         title: "Título"
         proposed_by: "Propuesto por"
