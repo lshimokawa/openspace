@@ -4,7 +4,7 @@
   <%= link_to "Nuevo", new_event_path, 'data-icon'=> 'plus' if can? :create, Event %>
 <% end %>
 
-<ul data-role="listview" data-filter="true">
+<ul data-role="listview" data-inset="true" data-filter="true">
 <% @events.each do |event| %>
 	<li><%= link_to event.name, event_path(event) %></li>
 <% end %>
