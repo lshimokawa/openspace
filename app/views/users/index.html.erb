@@ -1,0 +1,10 @@
+<%= content_for :header do %>
+  <%= link_to_home %>
+  <h1>Usuarios</h1>
+<% end %>
+
+<ul data-role="listview" data-filter="true" data-inset="true">
+  <% @users.each do |user| %>
+    <li><%= link_to user.nickname, user_path(user) %></li>
+  <% end %>
+</ul>

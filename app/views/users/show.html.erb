@@ -1,0 +1,14 @@
+<%= content_for :header do %>
+  <%= link_to_users %>
+  <h1>Usuario</h1>
+  <%= link_to "Editar", edit_user_path(@user), "data-icon"=>"gear" %>
+<% end %>
+
+<ul data-role="listview" data-inset="true">
+  <li data-role="list-divider">Datos del usuario</li>
+  <li><p>
+    Username: <%= @user.nickname %><br/>
+    Rol: <%= @user.role %><br />
+  </p></li>
+</ul>
+

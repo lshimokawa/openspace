@@ -1,0 +1,20 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :nickname %><%= f.text_field :nickname, :disabled => true %>
+  <%= f.label :role %><%= f.select(:role, User::ROLES) %>
+  
+  <fieldset class="ui-grid-a">
+  		<div class="ui-block-a"><%= f.submit 'Guardar', 'data-icon'=>'check', 'data-theme'=>'b' %></div>
+  		<div class="ui-block-b"><%= link_to 'Cancelar', users_path, 'data-role'=>'button', 'data-icon'=>'back' %></div>
+  </fieldset>
+  
+<% end %>
