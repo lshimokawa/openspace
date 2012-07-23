@@ -1,5 +1,7 @@
 <%= content_for :header do %>
+  <%= link_to_home %>
   <h1>Administración</h1>
 <% end %>
 
+<%= link_to "Usuarios", users_path, 'data-role'=> 'button' if can? :manage, User %>
 <%= link_to "Eventos", events_path, 'data-role'=> 'button' if can? :manage, Event %>

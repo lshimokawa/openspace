@@ -1,5 +1,5 @@
 <%= content_for :header do %>
-  <%= link_to "Inicio", root_path, 'data-icon'=> 'home' %>
+  <%= link_to_home %>
   <h1>Eventos</h1>
   <%= link_to "Nuevo", new_event_path, 'data-icon'=> 'plus' if can? :create, Event %>
 <% end %>
