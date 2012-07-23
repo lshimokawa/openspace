@@ -7,6 +7,14 @@
   <% end %>
 <% end %>
 
+<% if current_user and current_user.admin? %>
+  <ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">Administración</li>
+    <li><%= link_to "Eventos", events_path %></li>
+    <li><%= link_to "Usuarios", users_path %></li>
+  </ul>
+<% end %>
+
 <ul data-role="listview" data-inset="true">
   <li data-role="list-divider">Eventos</li>
   <% @events.each do |event| %>
