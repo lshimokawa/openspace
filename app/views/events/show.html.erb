@@ -8,6 +8,8 @@
 
 <ul data-role="listview" data-inset="true">
   <li data-role="list-divider">Datos del evento</li>
+  <%= hidden_field(:event, :latitude) %>
+  <%= hidden_field(:event, :longitude) %>
   <li>
     <h3><%= @event.name %></h3>
     <% unless @event.starting_at.nil? %>
@@ -22,5 +24,7 @@
   <li><p><%= @event.description %></p></li>
 
   <li data-role="list-divider">Ambientes</li>
-  <li><p><%= @event.locations.map { |f| f.name }.join ', ' %></p></li>
+  <li><p><%= @event.locations.map { |f| f.name }.join ', ' %></p></li>  
+  <li data-role="list-divider">Mapa</li>
+  <li><div id="map"></div></li>
 </ul>
