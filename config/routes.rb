@@ -4,6 +4,7 @@ Openspace::Application.routes.draw do
   match "/signout" => "authentication#destroy", :as => :signout
   
   resources :users
+  resources :locations
   
   resources :events do
     member do

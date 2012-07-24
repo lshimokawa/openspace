@@ -24,7 +24,9 @@
   <li><p><%= @event.description %></p></li>
 
   <li data-role="list-divider">Ambientes</li>
-  <li><p><%= @event.locations.map { |f| f.name }.join ', ' %></p></li>  
+  <% @event.locations.each do |location| %>
+  	<li><%= link_to location.name, location_path(location) %></li>
+  <% end %>  
   <li data-role="list-divider">Mapa</li>
   <li><div id="map"></div></li>
 </ul>

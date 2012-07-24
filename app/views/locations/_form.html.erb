@@ -1,0 +1,22 @@
+<%= form_for(@location) do |f| %>
+  <% if @location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+      <% @location.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :name %><%= f.text_field :name %>
+  <%= f.label :description %><%= f.text_field :description %>
+
+  <fieldset class="ui-grid-a">
+  		<div class="ui-block-a"><%= f.submit 'Guardar', 'data-icon'=>'check', 'data-theme'=>'b' %></div>
+  		<div class="ui-block-b"><%= link_to 'Cancelar', event_path(current_event), 'data-role'=>'button', 'data-icon'=>'back' %></div>
+  </fieldset>
+
+<% end %>
