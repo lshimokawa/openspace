@@ -1,3 +1,4 @@
+# Usuario del Open Space
 class User < ActiveRecord::Base
   ROLES = %w[admin event_admin assistant guest].freeze
   has_many :sessions
