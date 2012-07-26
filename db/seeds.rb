@@ -8,6 +8,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 admin = User.create(provider: 'twitter', uid: '8223712', name: "Lennon Shimokawa", nickname: "lshimokawa", role: "admin")
+admin = User.create(provider: 'twitter', uid: '185697990', name: "Karen Da Cruz", nickname: "karen_dax", role: "admin")
+
 
 aol5 = Event.create(
   name: 'Agile Open Lima V', 
