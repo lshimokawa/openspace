@@ -3,7 +3,10 @@
   <% if current_user %>
     <%= link_to "Logout", signout_path, 'data-role'=> 'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right' %>
   <% else %>
-    <%= link_to "Signin", "/auth/twitter", 'data-role'=>'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right', :rel => 'external' %>
+<div class='ui-btn-right'>
+		<%= link_to "Signin via Facebook", "/auth/facebook", 'data-role'=>'button', 'data-icon'=>'facebook', :rel => 'external' %>
+		 <%= link_to "Signin", "/auth/twitter", 'data-role'=>'button', 'data-icon'=>'twitter', :rel => 'external' %> 
+		</div>
   <% end %>
 <% end %>
 
