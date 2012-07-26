@@ -1,1 +1,7 @@
 Event manager mobile application with Open Space Tecnology support
+
+1. bundle install --without production
+2. rake db:migrate
+3. rails s
+4. open browser on localhost:3000
+
