@@ -1,13 +1,12 @@
 <%= content_for :header do %>
   <h1>Open Spaces</h1>
-  <% if current_user %>
-    <%= link_to "Logout", signout_path, 'data-role'=> 'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right' %>
-  <% else %>
-<div class='ui-btn-right'>
-		<%= link_to "Signin via Facebook", "/auth/facebook", 'data-role'=>'button', 'data-icon'=>'facebook', :rel => 'external' %>
-		 <%= link_to "Signin", "/auth/twitter", 'data-role'=>'button', 'data-icon'=>'twitter', :rel => 'external' %> 
-		</div>
-  <% end %>
+<% end %>
+
+<% if current_user %>
+  <%= link_to "Logout", signout_path, 'data-role'=> 'button' %>
+<% else %>
+  <%= link_to "Facebook login", "/auth/facebook", 'data-role'=>'button', :rel => 'external', 'data-inline'=>'true' %>
+  <%= link_to "Twitter login", "/auth/twitter", 'data-role'=>'button', :rel => 'external', 'data-inline'=>'true' %> 
 <% end %>
 
 <% if current_user and current_user.admin? %>
