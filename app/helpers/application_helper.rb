@@ -1,7 +1,7 @@
 module ApplicationHelper
   
   def link_to_home
-    link_to "Inicio", root_path, 'data-icon'=> 'home', 'data-direction'=> 'reverse'
+    link_to "", root_path, 'data-icon'=> 'home', 'data-direction'=> 'reverse', 'data-iconpos'=>'notext'
   end
   
   def link_to_authentication

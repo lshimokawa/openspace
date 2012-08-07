@@ -1,5 +1,5 @@
 <%= content_for :header do %>
-  <%= link_to "Inicio", root_path, 'data-icon'=> 'home' %>
+  <%= link_to_home %>
   <h1>Evento</h1>
   <% if current_user %>
     <%= link_to "Logout", signout_path, 'data-role'=> 'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right' %>
