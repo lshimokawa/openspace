@@ -14,8 +14,8 @@ admin = User.create(provider: 'twitter', uid: '185697990', name: "Karen Da Cruz"
 aol5 = Event.create(
   name: 'Agile Open Lima V', 
   description: 'La comunidad Agile Perú organiza el Agile Open Lima V, evento de difusión de metodologías ágiles en formato Open Space. Puedes ver las fotos de las ediciones anteriores aquí para que te des una idea. En este evento encontrarás charlas, conversatorios y workshops sobre temas de metodologías ágiles: Scrum, Extreme Programming, Lean, Kanban, Software Craftmanship, frameworks y herrmientas de desarrollo de software. Además se organizarán Coding Dojos para los interesados en mejorar su técnica de programación.',
-  starting_at: DateTime.new(2012, 02, 25, 9, 0),
-  ending_at: DateTime.new(2012, 02, 25, 18, 0),
+  starting_at: DateTime.new(2012, 2, 25, 9, 0),
+  ending_at: DateTime.new(2012, 2, 25, 18, 0),
   where: 'Universidad San Martín de Porres. Facultad de Arquitectura e Ingeniería',
   latitude: -12.072381,
   longitude: -76.941923,
@@ -85,3 +85,23 @@ Session.create(
   event: aol5, 
   user: admin
 )
+
+adtg = Event.create(
+  name: 'ADTG Open Lima', 
+  description: 'La comunidad ADTG Perú en conjunto con GDG Lima, comunidades oficiales de Google en Perú desea invitarlos a participar gratuitamente de este evento de Tecnologías Google en formato Open Space.',
+  starting_at: DateTime.new(2012, 8, 11, 9, 0),
+  ending_at: DateTime.new(2012, 8, 11, 18, 0),
+  where: 'Universidad Peruana de Ciencias Aplicadas. Prolongación Primavera 2390 Monterrico.',
+  latitude: -12.072381,
+  longitude: -76.941923,
+  website: 'http://adtgopenlima.eventbrite.com',
+  hashtag: 'adtgperu'
+)
+
+rotonda = adtg.locations.create(name: 'Rotonda Central')
+galeria = adtg.locations.create(name: 'Galeria')
+b41 = adtg.locations.create(name: 'Aula B41')
+b42 = adtg.locations.create(name: 'Aula B42')
+b43 = adtg.locations.create(name: 'Aula B43')
+b44 = adtg.locations.create(name: 'Aula B44')
+b45 = adtg.locations.create(name: 'Aula B45')
