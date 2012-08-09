@@ -24,9 +24,19 @@
   </fieldset>
   <%= f.label :where %><%= f.text_field :where, :placeholder => 'Lugar del evento' %>
   <%= f.label :description %><%= f.text_area :description, :placeholder => 'Descripción del evento' %>
+  <%= f.label :website %><%= f.text_field :website, :placeholder => 'Website del evento' %>
+  <%= f.label :hashtag %><%= f.text_field :hashtag, :placeholder => 'Twitter Hashtag' %>
+  <%= f.label :description %><%= f.text_area :description, :placeholder => 'Descripción del evento' %>
+
+  <ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">Ambientes</li>
+      <% @event.locations.each do |location| %>
+        <li><%= link_to location.name, edit_event_location_path(@event, location) %></li>
+      <% end %>
+  </ul>
   
   <fieldset class="ui-grid-a">
   		<div class="ui-block-a"><%= f.submit 'Guardar', 'data-icon'=>'check', 'data-theme'=>'b' %></div>
-  		<div class="ui-block-b"><%= link_to 'Cancelar', :back, 'data-role'=>'button', 'data-icon'=>'delete' %></div>
+  		<div class="ui-block-b"><%= link_to 'Cancelar', event_path(current_event), 'data-role'=>'button', 'data-icon'=>'delete' %></div>
   </fieldset>
 <% end %>

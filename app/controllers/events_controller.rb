@@ -19,6 +19,7 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+    session[:event_id] = @event.id
   end
 
   def create
