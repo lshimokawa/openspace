@@ -2,9 +2,7 @@
   <h1>Open Spaces</h1>
 <% end %>
 
-<% if current_user %>
-  <%= link_to "Logout", signout_path, 'data-role'=> 'button' %>
-<% else %>
+<% unless current_user %>
   <%= link_to "Facebook login", "/auth/facebook", 'data-role'=>'button', :rel => 'external', 'data-inline'=>'true' %>
   <%= link_to "Twitter login", "/auth/twitter", 'data-role'=>'button', :rel => 'external', 'data-inline'=>'true' %> 
 <% end %>
@@ -25,6 +23,10 @@
   	</li>
   <% end %>
 </ul>
+
+<% if current_user %>
+  <%= link_to "Logout", signout_path, 'data-role'=> 'button' %>
+<% end %>
 
 <%= content_for :footer do %>
   <div data-role="footer" data-position="fixed">

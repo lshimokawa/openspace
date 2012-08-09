@@ -1,11 +1,6 @@
 <%= content_for :header do %>
   <%= link_to_home %>
   <h1>Evento</h1>
-  <% if current_user %>
-    <%= link_to "Logout", signout_path, 'data-role'=> 'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right' %>
-  <% else %>
-    <%= link_to "Signin", "/auth/twitter", 'data-role'=>'button', 'data-icon'=>'twitter', 'class'=>'ui-btn-right', :rel => 'external' %>
-  <% end %>
 <% end %>
 
 <ul data-role="listview" data-inset="true">
