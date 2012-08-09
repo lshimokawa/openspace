@@ -5,7 +5,7 @@
 <% end %>
 
 <% if @sessions.empty? %>
-  <%= link_to "No hay sesiones, puedes proponer una sesión", new_event_session_path(current_event), 'data-role'=> 'button', 'data-theme'=>'b' if current_user %>
+  No hay sesiones propuestas.
 <% else %>
   <ul data-role="listview" data-inset="true" data-filter="true" data-count-theme="b">
   <% @sessions.each do |session| %>

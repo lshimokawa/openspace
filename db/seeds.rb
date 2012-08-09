@@ -17,6 +17,7 @@ aol5 = Event.create(
   starting_at: DateTime.new(2012, 2, 25, 9, 0),
   ending_at: DateTime.new(2012, 2, 25, 18, 0),
   where: 'Universidad San Martín de Porres. Facultad de Arquitectura e Ingeniería',
+  status: 'ended',
   latitude: -12.072381,
   longitude: -76.941923,
   website: 'http://agileopenlima.eventbrite.com',

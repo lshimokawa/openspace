@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   end
   
   def index
-    @sessions = Session.order(:title)
+    @sessions = Session.where(event_id: current_event.id).order(:title)
   end
   
   def show

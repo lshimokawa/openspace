@@ -9,5 +9,9 @@ class Event < ActiveRecord::Base
   def to_param
     "#{id}-#{name.parameterize}"
   end
+
+  def self.current_events
+    Event.where(['status != "ended"'])
+  end
     
 end

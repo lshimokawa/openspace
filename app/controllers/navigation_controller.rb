@@ -1,7 +1,7 @@
 class NavigationController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.current_events
   end
   
   def about
