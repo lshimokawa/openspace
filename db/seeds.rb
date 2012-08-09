@@ -93,8 +93,8 @@ adtg = Event.create(
   starting_at: DateTime.new(2012, 8, 11, 9, 0),
   ending_at: DateTime.new(2012, 8, 11, 18, 0),
   where: 'Universidad Peruana de Ciencias Aplicadas. Prolongación Primavera 2390 Monterrico.',
-  latitude: -12.072381,
-  longitude: -76.941923,
+  latitude: -12.104028,
+  longitude: -76.963049,
   website: 'http://adtgopenlima.eventbrite.com',
   hashtag: 'adtgperu'
 )
