@@ -18,6 +18,7 @@ FactoryGirl.define do
     status 'created'
     proposed_by 'Lennon Shimokawa'
     user
+    event
   end
 
   factory :location do

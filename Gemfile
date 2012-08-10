@@ -8,13 +8,14 @@ gem 'cancan'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
   gem 'ruby_gntp'
   gem 'guard-rspec'
 end
 
 group :test do
   gem 'factory_girl_rails'
-  gem 'capybara'
   gem 'simplecov', :require => false
 end
 
