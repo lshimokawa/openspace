@@ -1,7 +1,7 @@
 <%= content_for :header do %>
-  <%= link_to_users %>
+  <%= link_to "", users_path, 'data-icon'=> 'back', 'data-iconpos'=>'notext' %>
   <h1>Usuario</h1>
-  <%= link_to "Editar", edit_user_path(@user), "data-icon"=>"gear" %>
+  <%= link_to "Editar", edit_user_path(@user) %>
 <% end %>
 
 <ul data-role="listview" data-inset="true">
@@ -11,4 +11,3 @@
     Rol: <%= @user.role %><br />
   </p></li>
 </ul>
-

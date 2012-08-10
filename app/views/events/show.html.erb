@@ -1,5 +1,5 @@
 <%= content_for :header do %>
-  <%= link_to "Evento", menu_event_path(current_event), 'data-icon'=> 'back' %>
+  <%= link_to "", menu_event_path(current_event), 'data-icon'=> 'back', 'data-iconpos'=>'notext' %>
   <h1>Información</h1>
   <% if can? :manage, @event %>
     <%= link_to 'Editar', edit_event_path(@event), 'data-role'=>'button', 'data-icon'=>'gear' %>

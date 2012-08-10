@@ -1,7 +1,7 @@
 <%= content_for :header do %>
   <%= link_to_home %>
   <h1>Eventos</h1>
-  <%= link_to "Nuevo", new_event_path, if can? :create, Event %>
+  <%= link_to "Nuevo", new_event_path if can? :create, Event %>
 <% end %>
 
 <ul data-role="listview" data-inset="true" data-filter="true">
