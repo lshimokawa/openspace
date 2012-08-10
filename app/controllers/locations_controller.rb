@@ -10,9 +10,10 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(params[:location])
+    @location.event_id = 2
 
     if @location.save
-      redirect_to @location, notice: 'Ambiente creado.'
+      redirect_to edit_event_path(current_event), notice: 'Ambiente creado.'
     else
       render action: "new"
     end
@@ -31,6 +32,6 @@ class LocationsController < ApplicationController
   def destroy
     @location = Location.find(params[:id])
     @location.destroy
-    redirect_to locations_url
+    redirect_to edit_event_path(current_event), notice: 'Ambiente eliminado.'
   end
 end

@@ -214,4 +214,5 @@ es:
       location:
         name: "Nombre"
         description: "Descripción"
+        event: "Evento"
           

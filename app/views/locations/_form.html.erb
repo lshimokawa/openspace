@@ -12,8 +12,8 @@
   <%= f.label :name %><%= f.text_field :name %>
 
   <fieldset class="ui-grid-a">
-    <div class="ui-block-a"><%= f.submit 'Guardar', 'data-icon'=>'check', 'data-theme'=>'b' %></div>
-    <div class="ui-block-b"><%= link_to 'Cancelar', edit_event_path(current_event), 'data-role'=>'button', 'data-icon'=>'delete' %></div>
+    <div class="ui-block-a"><%= f.submit 'Guardar', 'data-theme'=>'b' %></div>
+    <div class="ui-block-b"><%= link_to 'Cancelar', edit_event_path(current_event), 'data-role'=>'button' %></div>
   </fieldset>
 
 <% end %>

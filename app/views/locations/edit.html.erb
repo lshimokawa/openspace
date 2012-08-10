@@ -3,3 +3,4 @@
 <% end %>
 
 <%= render 'form' %>
+<%= button_to 'Eliminar', event_location_path(current_event, @location), 'data-icon'=>'alert', :method => :delete %>

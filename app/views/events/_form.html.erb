@@ -28,6 +28,8 @@
   <%= f.label :hashtag %><%= f.text_field :hashtag, :placeholder => 'Twitter Hashtag' %>
   <%= f.label :description %><%= f.text_area :description, :placeholder => 'Descripción del evento' %>
 
+  <%= link_to "Nuevo ambiente", new_event_location_path(@event), 'data-role'=>'button' %>
+
   <ul data-role="listview" data-inset="true">
     <li data-role="list-divider">Ambientes</li>
       <% @event.locations.each do |location| %>
