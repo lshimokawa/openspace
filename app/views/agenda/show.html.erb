@@ -3,14 +3,13 @@
   <h1>Detalle de agenda</h1>
 <% end %>
 
-<%= link_to "Nuevo slot", new_event_slot_path(current_event, agenda_id: @agenda.id), 'data-role'=> 'button' if can? :create, Slot %>
+<%= link_to "Nuevo slot", new_event_slot_path(current_event), 'data-role'=> 'button' if can? :create, Slot %>
 
 <ul data-role="listview" data-inset="true">
   <li data-role="list-divider"><%= @agenda.starts_ends_title %></li>
   <% @agenda.slots.each do |slot| %>
     <li>
-        <h3><%= slot.location.name %></h3>
-        <p><%= slot.session.title unless slot.session.nil? %></p>
+        <%= link_to slot.description, edit_event_slot_path(current_event, slot) %>
     </li>    
   <% end %>
 </ul>

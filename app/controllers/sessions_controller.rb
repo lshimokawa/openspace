@@ -42,16 +42,16 @@ class SessionsController < ApplicationController
     @session.user = current_user
     @session.event_id = current_event.id
     if @session.save
-      redirect_to event_session_path(current_event, @session)
+      redirect_to event_session_path(current_event)
     else
-      render action: "index"
+      render action: "create"
     end
   end
 
   def update
     @session = Session.find(params[:id])
     if @session.update_attributes(params[:session])
-      redirect_to event_session_path(current_event, @session)
+      redirect_to event_session_path(current_event)
     else
       render action: "edit"
     end

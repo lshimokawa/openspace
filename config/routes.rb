@@ -12,7 +12,7 @@ Openspace::Application.routes.draw do
     
     resources :locations
 
-    resources :agenda 
+    resources :agenda
     resources :slots
 
     resources :sessions do 

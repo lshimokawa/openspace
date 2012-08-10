@@ -6,6 +6,7 @@ class AgendaController < ApplicationController
   
   def show
     @agenda = Agenda.find(params[:id])
+    session[:agenda_id] = params[:id]
   end
   
   def edit
