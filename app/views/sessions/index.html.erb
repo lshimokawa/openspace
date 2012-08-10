@@ -1,8 +1,13 @@
 <%= content_for :header do %>
   <%= link_to "", menu_event_path(current_event), 'data-icon'=> 'back', 'data-iconpos'=>'notext' %>
   <h1>Sesiones</h1>
-  <%= link_to "Proponer", new_event_session_path(current_event) if can? :create, Session %>
+  
 <% end %>
+
+<%= link_to "Proponer una sesión", new_event_session_path(current_event), 
+  'data-role' => 'button',
+  'data-theme' => 'b' if can? :create, Session %>
+<br />
 
 <% if @sessions.empty? %>
   No hay sesiones propuestas.

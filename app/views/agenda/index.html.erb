@@ -5,10 +5,6 @@
 
 <ul data-role="listview" data-inset="true">
   <% @agenda.each do |item| %>
-  <li data-role="list-divider"><%= item.starts_ends_title %></li>
-    <% item.slots.each do |slot| %>
-      <li><%= link_to slot.description, event_slot_path(current_event, slot) %></li>
-    <% end %>
-  </li>
+    <li><%= link_to item.starts_ends_title, event_agenda_path(current_event, item) %></li>
   <% end %>
 </ul>

@@ -10,9 +10,10 @@ Openspace::Application.routes.draw do
       get 'menu'
     end
     
-    resources :agenda
-    resources :slots
     resources :locations
+
+    resources :agenda 
+    resources :slots
 
     resources :sessions do 
       member do

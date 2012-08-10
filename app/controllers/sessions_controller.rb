@@ -44,7 +44,7 @@ class SessionsController < ApplicationController
     if @session.save
       redirect_to event_session_path(current_event, @session)
     else
-      render action: "new"
+      render action: "index"
     end
   end
 

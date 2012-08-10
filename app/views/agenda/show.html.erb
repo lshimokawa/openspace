@@ -1,7 +1,9 @@
 <%= content_for :header do %>
-  <%= link_to "Agenda", event_agenda_index_path(current_event) %>
+  <%= link_to "Agenda", event_agenda_index_path(current_event), 'data-icon'=> 'back', 'data-iconpos'=>'notext' %>
   <h1>Detalle de agenda</h1>
 <% end %>
+
+<%= link_to "Nuevo slot", new_event_slot_path(current_event, agenda_id: @agenda.id), 'data-role'=> 'button' if can? :create, Slot %>
 
 <ul data-role="listview" data-inset="true">
   <li data-role="list-divider"><%= @agenda.starts_ends_title %></li>
