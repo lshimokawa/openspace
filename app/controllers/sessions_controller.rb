@@ -24,6 +24,8 @@ class SessionsController < ApplicationController
   def index
     @sessions = Session.where(event_id: current_event.id).order(:title)
   end
+
+
   
   def show
     @session = Session.find(params[:id])

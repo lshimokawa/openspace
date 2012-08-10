@@ -9,6 +9,10 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def voting 
+    @sessions = Session.where(event_id: current_event.id).order(:title)
+  end
+
   def show
     @event = Event.find(params[:id])
   end

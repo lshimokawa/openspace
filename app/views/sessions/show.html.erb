@@ -1,8 +1,8 @@
 <%= content_for :header do %>
   <%= link_to "", event_sessions_path(current_event), 'data-icon'=> 'back', 'data-iconpos'=>'notext' %>
   <h1>Sesión</h1>
-  <%= link_to 'Editar', edit_event_session_path(current_event, @session), 'data-role'=>'button', 'data-icon'=>'gear' if can? :manage, @session %>
-<% end %>  
+  <%= link_to 'Editar', edit_event_session_path(current_event, @session), 'data-role'=>'button' if can? :manage, @session %>
+<% end %>
 
 <% if current_user %>
   <%= button_to "Votar por esta sesión", vote_event_session_path(current_event, @session), 'data-role'=>'button', 'data-theme'=>'b' unless current_user.voted? @session %>
