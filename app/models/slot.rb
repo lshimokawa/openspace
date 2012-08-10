@@ -7,7 +7,6 @@ class Slot < ActiveRecord::Base
   validates_presence_of :agenda, :location
   
   def description
-    #TODO i18n
     text = location.name
     text << " - #{session.title}" unless session.nil?
     text

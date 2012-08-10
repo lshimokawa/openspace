@@ -19,9 +19,10 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.role == 'admin'
       can :manage, :all
+    elsif user.role == 'event_admin'
+      can :manage, Session
     elsif user.role == 'assistant'
-      can :create, Session
-      can [:update, :destroy], Session, :user_id => user.id
+            
     else
       can :read, :all
     end
