@@ -34,7 +34,7 @@ class SlotsController < ApplicationController
   end
 
   def destroy
-    @slot = Session.find(params[:id])
+    @slot = Slot.find(params[:id])
     @slot.destroy
     redirect_to event_agenda_path(current_event, session[:agenda_id])
   end

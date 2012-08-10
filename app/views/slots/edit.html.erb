@@ -2,3 +2,4 @@
   <h1>Editar Slot</h1>
 <% end %>
 <%= render 'form' %>
+<%= button_to 'Eliminar', event_slot_path(current_event, @slot), :method => :delete, 'data-icon'=>'alert' %>

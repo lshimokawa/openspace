@@ -16,7 +16,7 @@
     Session.where(event_id: current_event.id).collect {|l| [ l.title, l.id ] }, {:include_blank => 'Sin asignar'} %>
   
   <fieldset class="ui-grid-a">
-      <div class="ui-block-a"><%= f.submit 'Guardar', 'data-icon'=>'check', 'data-theme'=>'b' %></div>
-      <div class="ui-block-b"><%= link_to 'Cancelar', event_agenda_path(current_event, session[:agenda_id]), 'data-role'=>'button', 'data-icon'=>'delete' %></div>
+      <div class="ui-block-a"><%= f.submit 'Guardar', 'data-theme'=>'b' %></div>
+      <div class="ui-block-b"><%= link_to 'Cancelar', event_agenda_path(current_event, session[:agenda_id]), 'data-role'=>'button' %></div>
   </fieldset>
 <% end %>

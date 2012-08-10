@@ -9,7 +9,11 @@
   <li data-role="list-divider"><%= @agenda.starts_ends_title %></li>
   <% @agenda.slots.each do |slot| %>
     <li>
-        <%= link_to slot.description, edit_event_slot_path(current_event, slot) %>
+        <% if can? :manage, Slot %>
+          <%= link_to slot.description, edit_event_slot_path(current_event, slot) %>
+        <% else %>
+          <%= slot.description %>
+        <% end %> 
     </li>    
   <% end %>
 </ul>
