@@ -215,4 +215,7 @@ es:
         name: "Nombre"
         description: "Descripción"
         event: "Evento"
+      slot:
+        location: "Ambiente"
+        session: "Sesión"
           

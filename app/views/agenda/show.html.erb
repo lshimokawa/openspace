@@ -7,13 +7,17 @@
 
 <ul data-role="listview" data-inset="true">
   <li data-role="list-divider"><%= @agenda.starts_ends_title %></li>
-  <% @agenda.slots.each do |slot| %>
-    <li>
-        <% if can? :manage, Slot %>
-          <%= link_to slot.description, edit_event_slot_path(current_event, slot) %>
-        <% else %>
-          <%= slot.description %>
-        <% end %> 
-    </li>    
+    <% if @agenda.slots.empty? %>
+      <li>No hay slots programados</li>
+    <% else %>
+    <% @agenda.slots.each do |slot| %>
+      <li>
+          <% if can? :manage, Slot %>
+            <%= link_to slot.description, edit_event_slot_path(current_event, slot) %>
+          <% else %>
+            <%= slot.description %>
+          <% end %> 
+      </li>
+    <% end %>
   <% end %>
 </ul>
