@@ -28,17 +28,19 @@
   <%= f.label :hashtag %><%= f.text_field :hashtag, :placeholder => 'Twitter Hashtag' %>
   <%= f.label :description %><%= f.text_area :description, :placeholder => 'Descripción del evento' %>
 
-  <%= link_to "Nuevo ambiente", new_event_location_path(@event), 'data-role'=>'button' %>
+  <% unless @event.new_record? %>
+    <%= link_to "Nuevo ambiente", new_event_location_path(@event), 'data-role'=>'button' %>
 
-  <ul data-role="listview" data-inset="true">
-    <li data-role="list-divider">Ambientes</li>
-      <% @event.locations.each do |location| %>
-        <li><%= link_to location.name, edit_event_location_path(@event, location) %></li>
-      <% end %>
-  </ul>
+    <ul data-role="listview" data-inset="true">
+      <li data-role="list-divider">Ambientes</li>
+        <% @event.locations.each do |location| %>
+          <li><%= link_to location.name, edit_event_location_path(@event, location) %></li>
+        <% end %>
+    </ul>
+  <% end %>
   
   <fieldset class="ui-grid-a">
-  		<div class="ui-block-a"><%= f.submit 'Guardar', 'data-icon'=>'check', 'data-theme'=>'b' %></div>
-  		<div class="ui-block-b"><%= link_to 'Cancelar', event_path(current_event), 'data-role'=>'button', 'data-icon'=>'delete' %></div>
+  		<div class="ui-block-a"><%= f.submit 'Guardar', 'data-theme'=>'b' %></div>
+  		<div class="ui-block-b"><%= link_to 'Cancelar', event_path(current_event), 'data-role'=>'button' %></div>
   </fieldset>
 <% end %>
