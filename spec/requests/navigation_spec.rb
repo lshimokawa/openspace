@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Navigation" do
 
   describe "GET /" do
-    it "shows home page" do
+    it "shows page" do
       visit root_path
       page.should have_content "Open Spaces"
     end
@@ -14,7 +14,7 @@ describe "Navigation" do
       page.should have_content "Open Spaces"
     end
 
-    it "shows home page" do
+    it "navigates to /about" do
       visit root_path
       click_link 'Acerca de'
       page.should have_content "Acerca de"
@@ -22,14 +22,14 @@ describe "Navigation" do
   end
 
   describe "GET /openspace" do
-    it "works!" do
+    it "shows page" do
       visit openspace_path
       page.should have_content "Open Spaces"
     end
   end
 
   describe "GET /about" do
-    it "works!" do
+    it "shows page" do
       visit about_path
       page.should have_content "Acerca de"
     end
