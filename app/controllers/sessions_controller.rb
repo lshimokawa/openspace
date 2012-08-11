@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
     @session = Session.find(params[:id])
     current_user.up_vote!(@session)
     redirect_to event_session_path(current_event, @session)
-  end  
-  
+  end
+
   # remueve el voto de una sesion por el presente usuario
   # usa el metodo unvote de cancan
   # el ! al final del metodo asegura que no cause una

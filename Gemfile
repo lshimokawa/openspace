@@ -5,6 +5,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'make_voteable'
 gem 'cancan'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'

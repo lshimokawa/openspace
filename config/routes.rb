@@ -8,7 +8,6 @@ Openspace::Application.routes.draw do
   resources :events do
     member do
       get 'menu'
-      get 'voting'
     end
     
     resources :locations
