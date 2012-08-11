@@ -24,8 +24,6 @@ class SessionsController < ApplicationController
   def index
     @sessions = Session.where(event_id: current_event.id).order(:title)
   end
-
-
   
   def show
     @session = Session.find(params[:id])
@@ -46,7 +44,7 @@ class SessionsController < ApplicationController
     if @session.save
       redirect_to event_session_path(current_event)
     else
-      render action: "create"
+      render action: "new"
     end
   end
 
