@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
   end
 
   def self.current_events
-    Event.where(['status != "ended"'])
+    Event.where("status != 'ended'")
   end
     
 end
