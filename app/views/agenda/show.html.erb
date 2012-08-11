@@ -15,7 +15,7 @@
           <% if can? :manage, Slot %>
             <%= link_to slot.description, edit_event_slot_path(current_event, slot) %>
           <% else %>
-            <%= slot.description %>
+            <%= link_to slot.description, event_slot_path(current_event, slot) %>
           <% end %> 
       </li>
     <% end %>

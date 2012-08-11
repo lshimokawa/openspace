@@ -16,7 +16,6 @@
     <p>Propuesto por: <%= @session.proposed_by %></p>
     <p>Tiene <%= pluralize(@session.up_votes, 'voto') %><% if current_user and current_user.voted? @session %><b>&nbsp;(has votado por esta sesión)</b><% end %></p>
     <p>Tipo de sesión: <%= @session.session_type.capitalize %></p>
-    <p>Registrado por: <%= twitter_link(@session.user.nickname) %></p>
   </li>
 
   <li data-role="list-divider">Descripción de la sesión</li>
