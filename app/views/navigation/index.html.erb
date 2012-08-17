@@ -4,8 +4,8 @@
 
 <% unless current_user %>
   <div data-role="controlgroup" data-type="horizontal">
-    <%= link_to "Facebook login", "/auth/facebook", 'data-role'=>'button', :rel => 'external', 'data-inline'=>'true' %>
-    <%= link_to "Twitter login", "/auth/twitter", 'data-role'=>'button', :rel => 'external', 'data-inline'=>'true' %> 
+    <%= link_to "Facebook login", "/auth/facebook", 'data-role'=>'button', :rel => 'external', 'data-inline'=>'true', 'data-mini'=>'true' %>
+    <%= link_to "Twitter login", "/auth/twitter", 'data-role'=>'button', :rel => 'external', 'data-inline'=>'true', 'data-mini'=>'true' %> 
   </div>
 <% end %>
 
