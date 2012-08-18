@@ -1,5 +1,7 @@
 # Sesión propuesta de un Open Space. Los asistentes votan por las sesiones en el marketplace.
 class Session < ActiveRecord::Base
+  attr_accessible :title, :proposed_by, :session_type, :description, :starting_at, :ending_at
+
   SESSION_TYPES = ["charla", "conversatorio", "workshop"].freeze
   SESSION_STATUS = ["created", "accepted"].freeze
 

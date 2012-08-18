@@ -1,5 +1,6 @@
 # Evento del Open Space
 class Event < ActiveRecord::Base
+  attr_accessible :name, :description, :starting_at, :ending_at, :where, :website, :hashtag, :latitude, :longitude
   has_many :sessions
   has_many :locations
   has_many :agendas

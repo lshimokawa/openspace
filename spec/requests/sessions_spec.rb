@@ -6,7 +6,6 @@ describe "Sessions" do
     it "shows only the sessions of the current event" do
       # @event = Factory.create(:event)
       # visit event_sessions_path(@event)
-      pending
     end
   end
 

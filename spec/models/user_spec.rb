@@ -23,6 +23,12 @@ describe User do
         Factory.build(:user, role: 'XXX').should_not be_valid
       end
     end
+
+    it "should prevent mass assignment of role" do
+      lambda { 
+        User.create(role: 'admin')
+      }.should raise_error
+    end
   end
   
 end

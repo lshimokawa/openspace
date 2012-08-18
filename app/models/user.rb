@@ -1,5 +1,6 @@
 # Usuario del Open Space
 class User < ActiveRecord::Base
+  attr_accessible :provider, :uid, :name, :nickname
   ROLES = %w[admin event_admin assistant guest].freeze
   has_many :sessions
   make_voter # los usuarios pueden votar por sesiones
