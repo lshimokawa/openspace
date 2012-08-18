@@ -4,7 +4,7 @@ class Slot < ActiveRecord::Base
   belongs_to :location
   belongs_to :session
   
-  validates_presence_of :agenda, :location
+  validates_presence_of :agenda
   
   def description
     text = location.name

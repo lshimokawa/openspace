@@ -11,19 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120723173759) do
+ActiveRecord::Schema.define(:version => 20120817233812) do
 
   create_table "agendas", :force => true do |t|
-    t.string   "title"
-    t.time     "starts"
-    t.time     "ends"
+    t.string   "title",      :null => false
+    t.time     "starts",     :null => false
+    t.time     "ends",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "event_id"
+    t.integer  "event_id",   :null => false
   end
 
   create_table "events", :force => true do |t|
-    t.string   "name"
+    t.string   "name",                               :null => false
     t.text     "description"
     t.datetime "starting_at"
     t.datetime "ending_at"
@@ -31,22 +31,22 @@ ActiveRecord::Schema.define(:version => 20120723173759) do
     t.string   "status",      :default => "created"
     t.string   "website"
     t.string   "hashtag"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
     t.float    "latitude"
     t.float    "longitude"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   create_table "locations", :force => true do |t|
-    t.string   "name"
+    t.string   "name",        :null => false
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.integer  "event_id"
+    t.integer  "event_id",    :null => false
   end
 
   create_table "sessions", :force => true do |t|
-    t.string   "title"
+    t.string   "title",                               :null => false
     t.string   "proposed_by"
     t.string   "session_type"
     t.text     "description"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(:version => 20120723173759) do
   end
 
   create_table "slots", :force => true do |t|
-    t.integer  "agenda_id"
+    t.integer  "agenda_id",   :null => false
     t.integer  "location_id"
     t.integer  "session_id"
     t.datetime "created_at",  :null => false
@@ -89,9 +89,5 @@ ActiveRecord::Schema.define(:version => 20120723173759) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
-
-  add_index "votings", ["voteable_type", "voteable_id", "voter_type", "voter_id"], :name => "unique_voters", :unique => true
-  add_index "votings", ["voteable_type", "voteable_id"], :name => "index_votings_on_voteable_type_and_voteable_id"
-  add_index "votings", ["voter_type", "voter_id"], :name => "index_votings_on_voter_type_and_voter_id"
 
 end

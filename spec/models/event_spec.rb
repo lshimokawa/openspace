@@ -1,8 +1,15 @@
 require 'spec_helper'
 
 describe Event do
-  subject { event }
-  let(:event) { Factory.build(:event) }
-  it { should be_valid } 
+  
+  describe "validations" do
+    it "should be valid" do
+      Factory.build(:event).should be_valid
+    end
+    
+    it "should not be valid" do 
+      Factory.build(:event, name: '').should_not be_valid
+    end
+  end
 
 end

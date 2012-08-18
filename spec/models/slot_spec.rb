@@ -4,13 +4,11 @@ describe Slot do
   
   describe "validations" do
     it "should be valid" do
-      #Factory.build(:slot).should be_valid
-      pending
+      Factory.build(:slot).should be_valid
     end
     
-    it "session is optional" do
-      #Factory.build(:slot, session: nil).should be_valid 
-      pending
+    it "should not be valid" do
+      Factory.build(:slot, agenda: nil).should_not be_valid
     end
   end
   
