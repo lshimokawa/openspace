@@ -10,15 +10,12 @@ Openspace::Application.routes.draw do
       get 'menu'
     end
     
-    resources :locations
     resources :agenda
+    resources :locations
     resources :slots
 
     resources :sessions do 
-      member do
-        post 'vote'
-        post 'unvote'
-      end
+      resources :votes
     end
   end
 

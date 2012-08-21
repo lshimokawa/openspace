@@ -83,8 +83,6 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    make_voteable (0.1.1)
-      activerecord (~> 3.0)
     mime-types (1.17.2)
     multi_json (1.0.4)
     multipart-post (1.1.5)
@@ -193,7 +191,6 @@ DEPENDENCIES
   guard-rspec
   jquery-rails
   launchy
-  make_voteable
   omniauth-facebook
   omniauth-twitter
   pg

@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.1'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-gem 'make_voteable'
 gem 'cancan'
 gem 'jquery-rails'
 

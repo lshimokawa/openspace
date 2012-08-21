@@ -23,7 +23,7 @@ class Ability
       can :manage, :all
       # pending security for this role
     elsif user.role == 'assistant'
-      can [:vote, :unvote], Session 
+      can :create, Vote
       can :read, [Agenda, Event, Location, Session, Slot]
       can :menu, Event
     else

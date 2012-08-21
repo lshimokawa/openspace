@@ -8,7 +8,6 @@ class Session < ActiveRecord::Base
   belongs_to :user
   belongs_to :event  
   has_many :slots
-  make_voteable
   validates_presence_of :title, :proposed_by, :user
   validates_inclusion_of :session_type, :in => SESSION_TYPES, :message => 'El tipo no es valido'
   validates_inclusion_of :status, :in => SESSION_STATUS, :message => 'El estado no es valido'

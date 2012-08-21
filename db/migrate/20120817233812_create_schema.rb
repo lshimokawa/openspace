@@ -1,12 +1,13 @@
 class CreateSchema < ActiveRecord::Migration
+  
   def up
     create_table "agendas", :force => true do |t|
       t.string   "title", :null => false
       t.time     "starts", :null => false
       t.time     "ends", :null => false
+      t.integer  "event_id", :null => false
       t.datetime "created_at", :null => false
       t.datetime "updated_at", :null => false
-      t.integer  "event_id", :null => false
     end
 
     create_table "events", :force => true do |t|
@@ -27,9 +28,9 @@ class CreateSchema < ActiveRecord::Migration
     create_table "locations", :force => true do |t|
       t.string   "name", :null => false
       t.string   "description"
+      t.integer  "event_id", :null => false
       t.datetime "created_at", :null => false
       t.datetime "updated_at", :null => false
-      t.integer  "event_id", :null => false
     end
 
     create_table "sessions", :force => true do |t|
@@ -40,12 +41,12 @@ class CreateSchema < ActiveRecord::Migration
       t.string   "status", :default => "created"
       t.datetime "starting_at"
       t.datetime "ending_at"
-      t.datetime "created_at", :null => false
-      t.datetime "updated_at", :null => false
       t.integer  "user_id"
-      t.integer  "up_votes", :default => 0, :null => false
       t.integer  "event_id"
       t.integer  "location_id"
+      t.integer  "votes_count", :default => 0, :null => false
+      t.datetime "created_at", :null => false
+      t.datetime "updated_at", :null => false
     end
 
     create_table "slots", :force => true do |t|
@@ -61,18 +62,14 @@ class CreateSchema < ActiveRecord::Migration
       t.string   "uid", :null => false
       t.string   "name", :null => false
       t.string   "nickname", :null => false
+      t.string   "role"
       t.datetime "created_at", :null => false
       t.datetime "updated_at", :null => false
-      t.integer  "up_votes", :default => 0, :null => false
-      t.string   "role"
     end
 
-    create_table "votings", :force => true do |t|
-      t.string   "voteable_type"
-      t.integer  "voteable_id"
-      t.string   "voter_type"
-      t.integer  "voter_id"
-      t.boolean  "up_vote",       :null => false
+    create_table "votes", :force => true do |t|
+      t.integer  "session_id"
+      t.integer  "user_id"
       t.datetime "created_at",    :null => false
       t.datetime "updated_at",    :null => false
     end
@@ -80,4 +77,5 @@ class CreateSchema < ActiveRecord::Migration
 
   def down
   end
+
 end

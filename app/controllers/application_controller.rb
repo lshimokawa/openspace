@@ -9,10 +9,10 @@ class ApplicationController < ActionController::Base
   private
   
   def current_event
-    @current_event ||= Event.find(session[:event_id]) if session[:event_id]
+    @current_event ||= Event.find_by_id(session[:event_id]) if session[:event_id]
   end
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
   end
 end

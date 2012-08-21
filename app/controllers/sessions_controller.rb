@@ -2,26 +2,6 @@
 class SessionsController < ApplicationController
   load_and_authorize_resource
 
-  # vota por una sesion una sola vez
-  # usa el metodo up_vote de cancan
-  # el ! al final del metodo asegura que no cause una
-  # excepcion
-  def vote
-    @session = Session.find(params[:id])
-    current_user.up_vote!(@session)
-    redirect_to event_session_path(current_event, @session)
-  end
-
-  # remueve el voto de una sesion por el presente usuario
-  # usa el metodo unvote de cancan
-  # el ! al final del metodo asegura que no cause una
-  # excepcion
-  def unvote
-    @session = Session.find(params[:id])
-    current_user.unvote!(@session)
-    redirect_to event_session_path(current_event, @session)
-  end
-  
   def index
     @sessions = Session.where(event_id: current_event.id).order(:title)
   end
