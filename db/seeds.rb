@@ -6,40 +6,30 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-admin = User.create(provider: 'twitter', uid: '8223712', name: "Lennon Shimokawa", nickname: "lshimokawa", role: "admin")
+admin = User.create(provider: 'twitter', uid: '8223712', name: "Lennon Shimokawa", nickname: "lshimokawa")
+admin.role = "admin"
 
-adtg = Event.create(
-  name: 'ADTG Open Lima', 
-  description: 'La comunidad ADTG Perú en conjunto con GDG Lima, comunidades oficiales de Google en Perú desea invitarlos a participar gratuitamente de este evento de Tecnologías Google en formato Open Space.',
-  starting_at: DateTime.new(2012, 8, 11, 9, 0),
-  ending_at: DateTime.new(2012, 8, 11, 18, 0),
-  where: 'Universidad Peruana de Ciencias Aplicadas. Prolongación Primavera 2390 Monterrico.',
-  latitude: -12.104028,
-  longitude: -76.963049,
-  website: 'http://adtgopenlima.eventbrite.com',
-  hashtag: 'gdevperu'
+aol6 = Event.create(
+  name: 'Agile Open Lima VI', 
+  description: 'La comunidad Agile Perú organiza el Agile Open Lima VI, evento de difusión de metodologías ágiles en formato Open Space.',
+  starting_at: DateTime.new(2012, 8, 26, 9, 0),
+  ending_at: DateTime.new(2012, 8, 26, 15, 0),
+  where: 'Universidad Peruana Unión (UPeU) - Sede Ñaña - Altura Km. 19.5 Carretera Central',
+  website: 'http://agileopenlima.eventbrite.com',
+  hashtag: 'agileopenlima'
 )
 
-rotonda = adtg.locations.create(name: 'Rotonda Central')
-aula_magna = adtg.locations.create(name: 'Aula Magna')
-b41 = adtg.locations.create(name: 'Aula B41')
-b42 = adtg.locations.create(name: 'Aula B42')
-b43 = adtg.locations.create(name: 'Aula B43')
-b44 = adtg.locations.create(name: 'Aula B44')
-b45 = adtg.locations.create(name: 'Aula B45')
-b51 = adtg.locations.create(name: 'Aula B51')
-b54 = adtg.locations.create(name: 'Aula B54')
+jardin = aol6.locations.create(name: 'Jardín')
 
-bienvenida = Agenda.create(title: 'Bienvenida', starts: '09:00', ends: '09:30', event: adtg)
-marketplace = Agenda.create(title: 'Marketplace', starts: '09:30', ends: '11:00', event: adtg)
-s1 = Agenda.create(title: 'Sesiones 1', starts: '11:00', ends: '12:00', event: adtg)
-s2= Agenda.create(title: 'Sesiones 2', starts: '12:00', ends: '13:00', event: adtg)
-almuerzo = Agenda.create(title: 'Almuerzo', starts: '13:00', ends: '14:00', event: adtg)
-s3 = Agenda.create(title: 'Sesiones 3', starts: '14:00', ends: '15:00', event: adtg)
-s4 = Agenda.create(title: 'Sesiones 4', starts: '15:00', ends: '16:00', event: adtg)
-s5 = Agenda.create(title: 'Sesiones 5', starts: '16:00', ends: '17:00', event: adtg)
-cierre = Agenda.create(title: 'Cierre', starts: '17:00', ends: '18:00', event: adtg)
+bienvenida = Agenda.create(title: 'Bienvenida y desayuno', starts: '09:00', ends: '10:00', event: aol6)
+marketplace = Agenda.create(title: 'Marketplace', starts: '10:00', ends: '11:00', event: aol6)
+s1 = Agenda.create(title: 'Sesiones 1', starts: '11:00', ends: '12:00', event: aol6)
+s2= Agenda.create(title: 'Sesiones 2', starts: '12:00', ends: '13:00', event: aol6)
+br = Agenda.create(title: 'Break', starts: '13:00', ends: '13:30', event: aol6)
+s3 = Agenda.create(title: 'Sesiones 3', starts: '13:30', ends: '14:30', event: aol6)
+cierre = Agenda.create(title: 'Cierre', starts: '14:30', ends: '15:00', event: aol6)
 
-Slot.create(agenda: bienvenida, location: rotonda)
-Slot.create(agenda: marketplace, location: rotonda)
-Slot.create(agenda: cierre, location: rotonda)
+Slot.create(agenda: bienvenida, location: jardin)
+Slot.create(agenda: marketplace, location: jardin)
+Slot.create(agenda: br, location: jardin)
+Slot.create(agenda: cierre, location: jardin)
