@@ -1,4 +1,5 @@
 class SlotsController < ApplicationController
+  load_and_authorize_resource
   
   def show
     @slot = Slot.find(params[:id])

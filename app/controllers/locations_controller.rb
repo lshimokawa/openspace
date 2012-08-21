@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  load_and_authorize_resource
 
   def new
     @location = Location.new
@@ -10,7 +11,7 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(params[:location])
-    @location.event_id = 2
+    @location.event_id = current_event
 
     if @location.save
       redirect_to edit_event_path(current_event), notice: 'Ambiente creado.'

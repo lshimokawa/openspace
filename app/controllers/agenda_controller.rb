@@ -1,4 +1,5 @@
 class AgendaController < ApplicationController
+  load_and_authorize_resource
   
   def index
     @agenda = Event.find(params[:event_id]).agendas.order(:starts)

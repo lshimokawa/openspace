@@ -1,5 +1,6 @@
 # Controller de las sesiones
 class SessionsController < ApplicationController
+  load_and_authorize_resource
 
   # vota por una sesion una sola vez
   # usa el metodo up_vote de cancan

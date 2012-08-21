@@ -20,11 +20,15 @@ class Ability
     if user.role == 'admin'
       can :manage, :all
     elsif user.role == 'event_admin'
-      can :manage, Session
+      can :manage, :all
+      # pending security for this role
     elsif user.role == 'assistant'
-            
+      can [:vote, :unvote], Session 
+      can :read, [Agenda, Event, Location, Session, Slot]
+      can :menu, Event
     else
-      can :read, :all
+      can :read, [Agenda, Event, Location, Session, Slot]
+      can :menu, Event
     end
   end
 end

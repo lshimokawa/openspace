@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  load_and_authorize_resource
 
   def menu
     event = Event.find(params[:id])
