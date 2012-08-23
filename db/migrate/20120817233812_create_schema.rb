@@ -68,6 +68,7 @@ class CreateSchema < ActiveRecord::Migration
     end
 
     create_table "votes", :force => true do |t|
+      t.integer  "event_id"
       t.integer  "session_id"
       t.integer  "user_id"
       t.datetime "created_at",    :null => false

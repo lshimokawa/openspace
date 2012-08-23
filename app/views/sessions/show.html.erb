@@ -5,7 +5,8 @@
 <% end %>
 
 <% if current_user %>
-  <%= button_to "Votar por esta sesión", event_session_votes_path(current_event, @session), 'data-role'=>'button', 'data-theme'=>'b'  %>
+  <%= button_to "Votar por esta sesión", event_session_votes_path(current_event, @session), 
+      'data-role'=>'button', 'data-theme'=>'b'  %>
 <% end %>
 
 <ul data-role="listview" data-inset="true">  

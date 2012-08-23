@@ -13,12 +13,6 @@ describe User do
       it { should be_able_to(:manage, Session.new) } 
     end
 
-    context "when role is event_admin" do 
-      let(:user) { Factory.create(:user, :role => 'event_admin') } 
-      it { should_not be_able_to(:manage, User.new) } 
-      it { should be_able_to(:manage, Session.new) }
-    end
-    
     context "when role is assistant" do 
       let(:user) { Factory.create(:user, :role => 'assistant') }
     end
