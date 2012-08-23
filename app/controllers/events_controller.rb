@@ -1,9 +1,15 @@
 class EventsController < ApplicationController
   load_and_authorize_resource
+  skip_authorization_check :only => [:menu, :tweets]
 
   def menu
     event = Event.find(params[:id])
     session[:event_id] = event.id
+  end
+
+  def tweets
+    #TODO implementar cache
+    @tweets = Twitter.search(current_event.hashtag).map{ |t| "#{t.from_user}: #{t.text}" }
   end
   
   def index

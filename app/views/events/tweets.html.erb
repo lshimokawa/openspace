@@ -1,0 +1,10 @@
+<%= content_for :header do %>
+  <%= link_to "", menu_event_path(current_event), 'data-icon'=> 'back', 'data-iconpos'=>'notext' %>
+  <h1>Tweets</h1>
+<% end %>
+
+<ul data-role="listview">
+<% @tweets.each do |tweet| %>
+  <li><%= tweet %></li>
+<% end %>
+</ul>

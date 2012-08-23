@@ -25,10 +25,10 @@ class Ability
     elsif user.role == 'assistant'
       can :create, Vote
       can :read, [Agenda, Event, Location, Session, Slot]
-      can :menu, Event
+      can [:menu, :tweets], Event
     else
       can :read, [Agenda, Event, Location, Session, Slot]
-      can :menu, Event
+      can [:menu, :tweets], Event
     end
   end
 end
