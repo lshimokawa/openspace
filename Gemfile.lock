@@ -159,6 +159,7 @@ GEM
       ffi (~> 1.0.9)
       json_pure
       rubyzip
+    simple_oauth (0.1.9)
     simplecov (0.5.4)
       multi_json (~> 1.0.3)
       simplecov-html (~> 0.5.3)
@@ -173,6 +174,11 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    twitter (2.2.0)
+      activesupport (>= 2.3.9, < 4)
+      faraday (~> 0.7)
+      multi_json (~> 1.0)
+      simple_oauth (~> 0.1)
     tzinfo (0.3.31)
     uglifier (1.2.3)
       execjs (>= 0.3.0)
@@ -200,4 +206,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simplecov
   sqlite3
+  twitter
   uglifier (>= 1.0.3)
