@@ -6,9 +6,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-admin = User.create(provider: 'twitter', uid: '8223712', name: "Lennon Shimokawa", nickname: "lshimokawa")
-admin.role = "admin"
-admin.save
+admin = User.create(provider: 'twitter', uid: '8223712', name: "Lennon Shimokawa", nickname: "lshimokawa", role: 'admin')
+admin = User.create(provider: 'twitter', uid: '185697990', name: "Karen Da Cruz", nickname: "karen_dax", role: "admin")
+admin = User.create(provider: 'twitter', uid: '16841996', name: "Freddy Cahuas", nickname: "frecaze", role: 'admin')
 
 aol6 = Event.create(
   name: 'Agile Open Lima VI', 
