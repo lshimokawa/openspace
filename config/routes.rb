@@ -18,9 +18,6 @@ Openspace::Application.routes.draw do
       resources :votes
     end
   end
-
-  #administration
-  match "/admin" => "admin#index"
     
   #navigation
   match "/openspace" => "navigation#openspace"
