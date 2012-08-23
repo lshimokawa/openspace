@@ -27,12 +27,6 @@ describe User do
         Factory.build(:user, role: 'XXX').should_not be_valid
       end
     end
-
-    it "should prevent mass assignment of role" do
-      expect { 
-        User.create(role: 'admin')
-      }.should raise_error
-    end
   end
 
   describe "voting" do
