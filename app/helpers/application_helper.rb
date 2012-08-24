@@ -1,5 +1,11 @@
 module ApplicationHelper
   
+  # Hack for nested singular resources
+  # http://stackoverflow.com/questions/2261827/nested-form-for-singular-resource
+  def event_agendas_path(*args)
+    event_agenda_path(*args)
+  end
+
   def link_to_home
     link_to "", root_path, 'data-icon'=> 'home', 'data-direction'=> 'reverse', 'data-iconpos'=>'notext'
   end

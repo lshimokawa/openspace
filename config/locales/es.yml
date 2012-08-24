@@ -200,6 +200,9 @@ es:
         blank: 'no puede estar vacío'
         record_invalid: 'registro no válido'
     attributes:
+      agenda:
+        title: "Título"
+        event: "Evento"
       event: 
         name: "Nombre"
         description: "Descripción"

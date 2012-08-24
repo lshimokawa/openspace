@@ -1,10 +1,16 @@
 <%= content_for :header do %>
   <%= link_to "", menu_event_path(current_event), 'data-icon'=> 'back', 'data-iconpos'=>'notext' %>
   <h1>Agenda</h1>
+  <%= link_to "Nuevo", new_event_agenda_path(current_event) if can? :create, Agenda %>
 <% end %>
 
 <ul data-role="listview" data-inset="true">
   <% @agenda.each do |item| %>
-    <li><%= link_to item.starts_ends_title, event_agenda_path(current_event, item) %></li>
+    <li>
+      <%= link_to event_agenda_path(current_event, item) do %>
+        <%= item.title %>
+        <p class="ui-li-aside"><%= item.starts_ends %></p>
+      <% end %>
+    </li>
   <% end %>
 </ul>

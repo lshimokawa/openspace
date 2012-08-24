@@ -14,4 +14,8 @@ class Agenda< ActiveRecord::Base
     "#{starts.strftime('%H:%M')} - #{ends.strftime('%H:%M')}: #{title}"
   end
 
+  def starts_ends
+    "#{starts.strftime('%H:%M')} - #{ends.strftime('%H:%M')}"
+  end
+
 end

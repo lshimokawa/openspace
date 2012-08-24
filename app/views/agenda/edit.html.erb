@@ -1,32 +1,4 @@
 <%= content_for :header do %>
   <h1>Agenda</h1>
 <% end %>
-
-<%= form_for [current_event, @agenda] do |f| %>
-  <% if @agenda.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-        <% @agenda.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%= f.label :title %><%= f.text_field :title, :class => 'required', :placeholder => 'Título del item de la agenda' %>
-  <fieldset data-role="controlgroup" data-type="horizontal">
-    <legend>Hora inicio</legend>
-    <%= f.time_select :starts %>
-  </fieldset>
-  
-  <fieldset data-role="controlgroup" data-type="horizontal">
-    <legend>Hora fin</legend>
-    <%= f.time_select :ends %>
-  </fieldset>
-  
-  <fieldset class="ui-grid-a">
-  		<div class="ui-block-a"><%= f.submit 'Guardar', 'data-icon'=>'check', 'data-theme'=>'b' %></div>
-  		<div class="ui-block-b"><%= link_to 'Cancelar', event_sessions_path(current_event), 'data-role'=>'button', 'data-icon'=>'delete' %></div>
-  </fieldset>
-  
-<% end %>
+<%= render 'form' %>
