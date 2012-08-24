@@ -22,7 +22,7 @@ aol6 = Event.create(
 
 jardin = aol6.locations.create(name: 'Jardín')
 
-bienvenida = Agenda.create(title: 'Bienvenida y desayuno', starts: '09:00', ends: '10:00', event: aol6)
+bienvenida = Agenda.create(title: 'Bienvenida', starts: '09:00', ends: '10:00', event: aol6)
 marketplace = Agenda.create(title: 'Marketplace', starts: '10:00', ends: '11:00', event: aol6)
 s1 = Agenda.create(title: 'Sesiones 1', starts: '11:00', ends: '12:00', event: aol6)
 s2= Agenda.create(title: 'Sesiones 2', starts: '12:00', ends: '13:00', event: aol6)
