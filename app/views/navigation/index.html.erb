@@ -2,12 +2,15 @@
   <h1>Open Spaces</h1>
 <% end %>
 
-<% unless current_user %>
-  <div data-role="controlgroup" data-type="horizontal" data-mini="true">
-    <%= link_to "Facebook login", "/auth/facebook", 'data-role'=>'button', :rel => 'external', 'data-inline'=>'true' %>
-    <%= link_to "Twitter login", "/auth/twitter", 'data-role'=>'button', :rel => 'external', 'data-inline'=>'true'  %> 
-  </div>
-<% end %>
+<div data-role="controlgroup" data-type="horizontal" data-mini="true">
+  <% unless current_user %>
+    <%= link_to "Facebook login", "/auth/facebook", 'data-role'=>'button', :rel => 'external' %>
+    <%= link_to "Twitter login", "/auth/twitter", 'data-role'=>'button', :rel => 'external'  %> 
+  <% end %>
+  <% if current_user %>
+    <%= link_to "Logout", signout_path, 'data-role'=> 'button' %>
+  <% end %>
+</div>
 
 <% if current_user and current_user.admin? %>
   <ul data-role="listview" data-inset="true">
@@ -26,9 +29,7 @@
   <% end %>
 </ul>
 
-<% if current_user %>
-  <%= link_to "Logout", signout_path, 'data-role'=> 'button' %>
-<% end %>
+
 
 <%= content_for :footer do %>
   <div data-role="footer" data-position="fixed">

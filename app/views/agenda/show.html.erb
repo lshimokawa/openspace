@@ -1,28 +1,32 @@
 <%= content_for :header do %>
   <%= link_to "Agenda", event_agenda_index_path(current_event), 'data-icon'=> 'back', 'data-iconpos'=>'notext' %>
   <h1>Detalle de agenda</h1>
-  <%= link_to "Editar", edit_event_agenda_path(current_event, @agenda) if can? :edit, Agenda %>
 <% end %>
 
 <div data-role="controlgroup" data-type="horizontal" data-mini="true">
+  <%= link_to "Editar Agenda", edit_event_agenda_path(current_event, @agenda) , 'data-role'=> 'button' if can? :edit, Agenda %>
   <%= link_to "Nuevo slot", new_event_slot_path(current_event), 'data-role'=> 'button' if can? :create, Slot %>
 </div>
 
 <ul data-role="listview" data-inset="true">
   <li data-role="list-divider">
-    <%= @agenda.title %>
-    <p class="ui-li-aside"><%= @agenda.starts_ends %></p>
+    <%= @agenda.title %><p class="ui-li-aside"><%= @agenda.starts_ends %></p>
   </li>
-    <% if @agenda.slots.empty? %>
-      <li>No hay slots programados</li>
-    <% else %>
+  <% if @agenda.slots.empty? %>
+    <li>No hay slots programados</li>
+  <% else %>
     <% @agenda.slots.each do |slot| %>
       <li>
-          <% if can? :manage, Slot %>
-            <%= link_to slot.description, edit_event_slot_path(current_event, slot) %>
-          <% else %>
-            <%= link_to slot.description, event_slot_path(current_event, slot) %>
-          <% end %> 
+        <%= link_to event_slot_path(current_event, slot) do %>
+          <h2><%= slot.location.name %></h2>
+          <% unless slot.session.nil? %>
+            <h3><%= slot.session.title %></h3>
+            <p>
+              Propuesto por: <%= slot.session.proposed_by %><br />
+              Tipo de sesión: <%= slot.session.session_type.capitalize %>
+            </p>
+          <% end %>
+        <% end %>
       </li>
     <% end %>
   <% end %>

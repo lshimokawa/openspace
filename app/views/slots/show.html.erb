@@ -1,25 +1,18 @@
 <%= content_for :header do %>
-  <%= link_to "", event_agenda_index_path(), 'data-icon'=> 'back', 'data-iconpos'=>'notext' %>
+  <%= link_to "", event_agenda_index_path(current_event), 'data-icon'=> 'back', 'data-iconpos'=>'notext' %>
   <h1>Slot</h1>
   <%= link_to "Asignar", edit_event_slot_path(current_event, @slot) if can? :edit, Slot %>
 <% end %>
 
-<ul data-role="listview" data-inset="true">
-  <li data-role="list-divider">Datos del Slot</li>
-  <li>
-    <h3><%= @slot.agenda.starts_ends_title %></h3>
-    <p>Ubicación: <%= @slot.location.name %></p>
-  </li>
+<h2><%= @slot.agenda.title %></h2>
+<p>
+  Hora: <%= @slot.agenda.starts_ends %><br />
+  Ubicación: <%= @slot.location.name %>
+</p>
 
-  <% unless @slot.session.nil? %>
-    <li data-role="list-divider">Datos de la sesión</li>
-    <li>
-      <h3><%= @slot.session.title %></h3>
-      <p>Propuesta por: <%= @slot.session.proposed_by %></p>
-      <p>Tipo de sesión: <%= @slot.session.session_type.capitalize %></p>
-    </li>
-
-    <li data-role="list-divider">Descripción de la sesión</li>
-    <li><p><%= @slot.session.description %></p></li>
-  <% end %>
-</ul>
+<h3><%= @slot.session.title %></h3>
+<p>
+  Propuesta por: <%= @slot.session.proposed_by %><br />
+  Tipo de sesión: <%= @slot.session.session_type.capitalize %>
+</p>
+<p><%= @slot.session.description %></p>

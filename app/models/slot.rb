@@ -6,10 +6,4 @@ class Slot < ActiveRecord::Base
   
   validates_presence_of :agenda
   
-  def description
-    text = location.name
-    text << " - #{session.title}" unless session.nil?
-    text
-  end
-  
 end

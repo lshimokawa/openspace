@@ -221,4 +221,6 @@ es:
       slot:
         location: "Ambiente"
         session: "Sesión"
-          
+      user:
+        nickname: "Usuario"
+        role: "Rol"

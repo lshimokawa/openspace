@@ -4,10 +4,5 @@
   <%= link_to "Editar", edit_user_path(@user) %>
 <% end %>
 
-<ul data-role="listview" data-inset="true">
-  <li data-role="list-divider">Datos del usuario</li>
-  <li><p>
-    Username: <%= @user.nickname %><br/>
-    Rol: <%= @user.role %><br />
-  </p></li>
-</ul>
+Usuario: <%= @user.nickname %><br />
+Rol: <%= @user.role %>

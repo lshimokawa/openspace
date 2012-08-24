@@ -9,15 +9,9 @@
       'data-role'=>'button', 'data-theme'=>'b'  %>
 <% end %>
 
-<ul data-role="listview" data-inset="true">  
-  <li data-role="list-divider">Datos de la sesión</li>
-  <li>
-    <h3><%= @session.title %></h3>
-    <p>Propuesto por: <%= @session.proposed_by %></p>
-    <p>Tipo de sesión: <%= @session.session_type.capitalize %></p>
-  </li>
-
-  <li data-role="list-divider">Descripción de la sesión</li>
-  <li><p><%= @session.description %></p></li>
-
-</ul>
+<h1><%= @session.title %></h1>
+<p>
+  Propuesto por: <%= @session.proposed_by %><br />
+  Tipo de sesión: <%= @session.session_type.capitalize %>
+</p>
+<p><%= @session.description %></p>
