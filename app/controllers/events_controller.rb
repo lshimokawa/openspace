@@ -11,6 +11,13 @@ class EventsController < ApplicationController
     #TODO implementar cache
     @tweets = Twitter.search(current_event.hashtag).map{ |t| "#{t.from_user}: #{t.text}" }
   end
+
+  def restart_voting
+    @event = Event.find(params[:id])
+    Vote.delete_all(event_id: @event.id)
+    Session.where(event_id: @event.id).update_all(votes_count: 0)
+    redirect_to @event
+  end
   
   def index
     @events = Event.all

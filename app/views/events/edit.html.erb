@@ -1,2 +1,4 @@
 <%= content_for :header do %><h1>Editar evento</h1><% end %>
+<%= button_to "Reiniciar votación", restart_voting_event_path(current_event), 'data-role'=>'button' %>
+
 <%= render 'form' %>

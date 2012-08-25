@@ -9,6 +9,7 @@ Openspace::Application.routes.draw do
     member do
       get 'menu'
       get 'tweets'
+      post 'restart_voting'
     end
     
     resources :agenda
