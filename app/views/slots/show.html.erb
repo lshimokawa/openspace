@@ -10,9 +10,11 @@
   Ubicación: <%= @slot.location.name %>
 </p>
 
-<h3><%= @slot.session.title %></h3>
-<p>
-  Propuesta por: <%= @slot.session.proposed_by %><br />
-  Tipo de sesión: <%= @slot.session.session_type.capitalize %>
-</p>
-<p><%= @slot.session.description %></p>
+<% unless @slot.session.nil? %>
+  <h3><%= @slot.session.title %></h3>
+  <p>
+    Propuesta por: <%= @slot.session.proposed_by %><br />
+    Tipo de sesión: <%= @slot.session.session_type.capitalize %>
+  </p>
+  <p><%= @slot.session.description %></p>
+<% end %>

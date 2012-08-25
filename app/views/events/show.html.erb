@@ -7,10 +7,10 @@
 <%= hidden_field(:event, :latitude) %>
 <%= hidden_field(:event, :longitude) %>
 
-<h1><%= @event.name %></h1>
+<h2><%= @event.name %></h2>
 
 <div data-role="collapsible" data-collapsed="false">
-  <h2>Datos</h2>
+  <h3>Datos</h3>
   <% unless @event.starting_at.nil? %>
     Cuando: <%= @event.starting_at.strftime('%d/%m/%Y de %H:%M') + ' a '+ @event.ending_at.strftime('%H:%M')%><br/>
     Donde: <%= @event.where %><br/>
@@ -20,12 +20,12 @@
 </div>
 
 <div data-role="collapsible" data-collapsed="false">
-  <h2>Descripción</h2>
+  <h3>Descripción</h3>
   <%= @event.description %>
 </div>
 
 <div data-role="collapsible" data-collapsed="false">
-  <h2>Ambientes</h2>
+  <h3>Ambientes</h3>
     <% @event.locations.each do |location| %>
       <li><%= location.name %></li>
     <% end %>
