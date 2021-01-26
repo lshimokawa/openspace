@@ -1,5 +1,5 @@
 # Open Space
-Event manager mobile application with Open Space Tecnology support.
+Event manager mobile application with Open Space Technology support.
 
 ## Configuration
 1. `$ bundle install`
